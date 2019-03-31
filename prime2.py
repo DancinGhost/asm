@@ -6,7 +6,6 @@ for possiblePrime in range(2, max + 1):
         if possiblePrime % num == 0:
             isPrime = False
             break
-
     if isPrime:
         primes.append(possiblePrime)
 print(primes)
