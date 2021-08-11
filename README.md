@@ -2,11 +2,11 @@
 
 Alright so you are here because you like assembly/freestanding code, cool.
 
-`
-gcc -S tutorial.c -o tutorial.s //
-gcc tutorial.s -o tutorial
-./tutorial
-`
+
+`gcc -S tutorial.c -o tutorial.s`
+`gcc tutorial.s -o tutorial`
+`.tutorial`
+
 
 `gcc program.c -ffreestanding`
 
