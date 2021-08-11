@@ -2,17 +2,16 @@
 
 Alright so you are here because you like assembly/freestanding code, cool.
 
-```sh
+`
 gcc -S tutorial.c -o tutorial.s //
 gcc tutorial.s -o tutorial
 ./tutorial
-```
+`
 
-```sh
-gcc program.c -ffreestanding
-```
+`gcc program.c -ffreestanding`
 
 .S files are ran through a preprocessor
+
 .s files are fed straight into the assembler
 
 # Format
