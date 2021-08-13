@@ -11,7 +11,7 @@ So you are here because you like assembly/freestanding code, cool.
 
 `./tutorial`
 ### Using odjump to disassemble
-objdump -d --visualize-jumps -M intel -S tutorial.exe
+'objdump -d --visualize-jumps -M intel -S tutorial.exe'
 
 ### Compiling for no operating system or libraries
 `gcc program.c -ffreestanding`
@@ -19,7 +19,7 @@ objdump -d --visualize-jumps -M intel -S tutorial.exe
 # Format
 
     .globl main
-
+    
     main:
         # Write code here!
 
