@@ -1,1272 +1,1104 @@
-main:     file format elf32-littlearm
+main:     file format elf64-littleaarch64
 
 
 Disassembly of section .init:
 
-<_init>:
-        push    {r3, lr}
-        bl      <call_weak_fn>
-        pop     {r3, pc}
+0000000000000e20 <_init>:
+ e20:   stp     x29, x30, [sp, #-16]!
+ e24:   mov     x29, sp
+ e28:   bl      1028 <call_weak_fn>
+ e2c:   ldp     x29, x30, [sp], #16
+ e30:   ret
 
 Disassembly of section .plt:
 
-<.plt>:
-        push    {lr}            ; (str lr, [sp, #-4]!)
-        ldr     lr, [pc, #4]    ; <.plt+0x10>
-        add     lr, pc, lr
-        ldr     pc, [lr, #8]!
-        .word   0x000116a8
+0000000000000e40 <.plt>:
+ e40:   stp     x16, x30, [sp, #-16]!
+ e44:   adrp    x16, 12000 <__FRAME_END__+0x10250>
+ e48:   ldr     x17, [x16, #4088]
+ e4c:   add     x16, x16, #0xff8
+ e50:   br      x17
+ e54:   nop
+ e58:   nop
+ e5c:   nop
 
-<__aeabi_atexit@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1704]!        ; 0x6a8
+0000000000000e60 <puts@plt>:
+ e60:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ e64:   ldr     x17, [x16]
+ e68:   add     x16, x16, #0x0
+ e6c:   br      x17
 
-<__cxa_begin_catch@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1696]!        ; 0x6a0
+0000000000000e70 <pthread_join@plt>:
+ e70:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ e74:   ldr     x17, [x16, #8]
+ e78:   add     x16, x16, #0x8
+ e7c:   br      x17
 
-<pthread_join@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1688]!        ; 0x698
+0000000000000e80 <__cxa_begin_catch@plt>:
+ e80:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ e84:   ldr     x17, [x16, #16]
+ e88:   add     x16, x16, #0x10
+ e8c:   br      x17
 
-<__cxa_allocate_exception@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1680]!        ; 0x690
+0000000000000e90 <__cxa_allocate_exception@plt>:
+ e90:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ e94:   ldr     x17, [x16, #24]
+ e98:   add     x16, x16, #0x18
+ e9c:   br      x17
 
-<printf@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1672]!        ; 0x688
+0000000000000ea0 <__cxa_finalize@plt>:
+ ea0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ ea4:   ldr     x17, [x16, #32]
+ ea8:   add     x16, x16, #0x20
+ eac:   br      x17
 
-<puts@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1664]!        ; 0x680
+0000000000000eb0 <_ZNSirsERi@plt>:
+ eb0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ eb4:   ldr     x17, [x16, #40]
+ eb8:   add     x16, x16, #0x28
+ ebc:   br      x17
 
-<_ZNSirsERi@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1656]!        ; 0x678
+0000000000000ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>:
+ ec0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ ec4:   ldr     x17, [x16, #48]
+ ec8:   add     x16, x16, #0x30
+ ecc:   br      x17
 
-<_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1648]!        ; 0x670
+0000000000000ed0 <__isoc99_scanf@plt>:
+ ed0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ ed4:   ldr     x17, [x16, #56]
+ ed8:   add     x16, x16, #0x38
+ edc:   br      x17
 
-<_ZNSolsEPKv@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1640]!        ; 0x668
+0000000000000ee0 <_ZNSolsEPKv@plt>:
+ ee0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ ee4:   ldr     x17, [x16, #64]
+ ee8:   add     x16, x16, #0x40
+ eec:   br      x17
 
-<abort@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1632]!        ; 0x660
+0000000000000ef0 <__libc_start_main@plt>:
+ ef0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ ef4:   ldr     x17, [x16, #72]
+ ef8:   add     x16, x16, #0x48
+ efc:   br      x17
 
-<_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1624]!        ; 0x658
+0000000000000f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
+ f00:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f04:   ldr     x17, [x16, #80]
+ f08:   add     x16, x16, #0x50
+ f0c:   br      x17
 
-<_ZNSaIcED1Ev@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1616]!        ; 0x650
+0000000000000f10 <_ZNSaIcED1Ev@plt>:
+ f10:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f14:   ldr     x17, [x16, #88]
+ f18:   add     x16, x16, #0x58
+ f1c:   br      x17
 
-<__cxa_end_cleanup@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1608]!        ; 0x648
+0000000000000f20 <__cxa_atexit@plt>:
+ f20:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f24:   ldr     x17, [x16, #96]
+ f28:   add     x16, x16, #0x60
+ f2c:   br      x17
 
-<__isoc99_scanf@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1600]!        ; 0x640
+0000000000000f30 <pthread_create@plt>:
+ f30:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f34:   ldr     x17, [x16, #104]
+ f38:   add     x16, x16, #0x68
+ f3c:   br      x17
 
-<_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1592]!        ; 0x638
+0000000000000f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>:
+ f40:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f44:   ldr     x17, [x16, #112]
+ f48:   add     x16, x16, #0x70
+ f4c:   br      x17
 
-<_ZNSt8ios_base4InitC1Ev@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1584]!        ; 0x630
+0000000000000f50 <_ZNSt8ios_base4InitC1Ev@plt>:
+ f50:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f54:   ldr     x17, [x16, #120]
+ f58:   add     x16, x16, #0x78
+ f5c:   br      x17
 
-<__cxa_end_catch@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1576]!        ; 0x628
+0000000000000f60 <abort@plt>:
+ f60:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f64:   ldr     x17, [x16, #128]
+ f68:   add     x16, x16, #0x80
+ f6c:   br      x17
 
-<__gxx_personality_v0@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1568]!        ; 0x620
+0000000000000f70 <__cxa_end_catch@plt>:
+ f70:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f74:   ldr     x17, [x16, #136]
+ f78:   add     x16, x16, #0x88
+ f7c:   br      x17
 
-<pthread_create@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1560]!        ; 0x618
+0000000000000f80 <__gxx_personality_v0@plt>:
+ f80:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f84:   ldr     x17, [x16, #144]
+ f88:   add     x16, x16, #0x90
+ f8c:   br      x17
 
-<__cxa_throw@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1552]!        ; 0x610
+0000000000000f90 <__cxa_throw@plt>:
+ f90:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ f94:   ldr     x17, [x16, #152]
+ f98:   add     x16, x16, #0x98
+ f9c:   br      x17
 
-<_ZNSolsEi@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1544]!        ; 0x608
+0000000000000fa0 <_ZNSolsEi@plt>:
+ fa0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ fa4:   ldr     x17, [x16, #160]
+ fa8:   add     x16, x16, #0xa0
+ fac:   br      x17
 
-<_ZNSaIcEC1Ev@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1536]!        ; 0x600
+0000000000000fb0 <_Unwind_Resume@plt>:
+ fb0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ fb4:   ldr     x17, [x16, #168]
+ fb8:   add     x16, x16, #0xa8
+ fbc:   br      x17
 
-<__libc_start_main@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1528]!        ; 0x5f8
+0000000000000fc0 <_ZNSaIcEC1Ev@plt>:
+ fc0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ fc4:   ldr     x17, [x16, #176]
+ fc8:   add     x16, x16, #0xb0
+ fcc:   br      x17
 
-<__gmon_start__@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1520]!        ; 0x5f0
+0000000000000fd0 <__gmon_start__@plt>:
+ fd0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ fd4:   ldr     x17, [x16, #184]
+ fd8:   add     x16, x16, #0xb8
+ fdc:   br      x17
 
-<__cxa_finalize@plt>:
-        add     ip, pc, #0, 12
-        add     ip, ip, #69632  ; 0x11000
-        ldr     pc, [ip, #1512]!        ; 0x5e8
+0000000000000fe0 <printf@plt>:
+ fe0:   adrp    x16, 13000 <puts@GLIBC_2.17>
+ fe4:   ldr     x17, [x16, #192]
+ fe8:   add     x16, x16, #0xc0
+ fec:   br      x17
 
 Disassembly of section .text:
 
-<_start>:
-        mov.w   fp, #0
-        mov.w   lr, #0
-        pop     {r1}
-        mov     r2, sp
-        push    {r2}
-        push    {r0}
-        ldr.w   sl, [pc, #36]   ; <_start+0x38>
-        add     r3, pc, #32     ; (adr r3, <_start+0x38>)
-        add     sl, r3
-        ldr.w   ip, [pc, #32]   ; <_start+0x3c>
-        ldr.w   ip, [sl, ip]
-        str.w   ip, [sp, #-4]!
-        ldr     r3, [pc, #24]   ; (<_start+0x40>)
-        ldr.w   r3, [sl, r3]
-        ldr     r0, [pc, #24]   ; (<_start+0x44>)
-        ldr.w   r0, [sl, r0]
-        blx     <__libc_start_main@plt>
-        blx     <abort@plt>
-        .word   0x00011540
-        .word   0x00000088
-        .word   0x00000080
-        .word   0x00000074
+0000000000000ff0 <_start>:
+     ff0:       mov     x29, #0x0                       // #0
+     ff4:       mov     x30, #0x0                       // #0
+     ff8:       mov     x5, x0
+     ffc:       ldr     x1, [sp]
+    1000:       add     x2, sp, #0x8
+    1004:       mov     x6, sp
+    1008:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    100c:       ldr     x0, [x0, #3992]
+    1010:       adrp    x3, 12000 <__FRAME_END__+0x10250>
+    1014:       ldr     x3, [x3, #4016]
+    1018:       adrp    x4, 12000 <__FRAME_END__+0x10250>
+    101c:       ldr     x4, [x4, #4032]
+    1020:       bl      ef0 <__libc_start_main@plt>
+    1024:       bl      f60 <abort@plt>
 
-<call_weak_fn>:
-        ldr     r3, [pc, #20]   ; <call_weak_fn+0x1c>
-        ldr     r2, [pc, #20]   ; <call_weak_fn+0x20>
-        add     r3, pc, r3
-        ldr     r2, [r3, r2]
-        cmp     r2, #0
-        bxeq    lr
-        b       <__gmon_start__@plt>
-        .word   0x00011520
-        .word   0x00000090
+0000000000001028 <call_weak_fn>:
+    1028:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    102c:       ldr     x0, [x0, #4048]
+    1030:       cbz     x0, 1038 <call_weak_fn+0x10>
+    1034:       b       fd0 <__gmon_start__@plt>
+    1038:       ret
+    103c:       nop
 
-<deregister_tm_clones>:
-            ldr r0, [pc, #24]   ; (<deregister_tm_clones+0x1c>)
-            ldr r3, [pc, #28]   ; (<deregister_tm_clones+0x20>)
-            ldr r2, [pc, #28]   ; (<deregister_tm_clones+0x24>)
-            add r0, pc
-            add r3, pc
-            add r2, pc
-            cmp r3, r0
-        /-- beq.n       <deregister_tm_clones+0x18>
-        |   ldr r3, [pc, #20]   ; (<deregister_tm_clones+0x28>)
-        |   ldr r3, [r2, r3]
-        +-- cbz r3, <deregister_tm_clones+0x18>
-        |   bx  r3
-        \-> bx  lr
-            nop
-            .word       0x000115aa
-            .word       0x000115a8
-            .word       0x000114fe
-            .word       0x00000084
+0000000000001040 <deregister_tm_clones>:
+    1040:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    1044:       add     x0, x0, #0xe8
+    1048:       adrp    x1, 13000 <puts@GLIBC_2.17>
+    104c:       add     x1, x1, #0xe8
+    1050:       cmp     x1, x0
+    1054:       b.eq    106c <deregister_tm_clones+0x2c>  // b.none
+    1058:       adrp    x1, 12000 <__FRAME_END__+0x10250>
+    105c:       ldr     x1, [x1, #4024]
+    1060:       cbz     x1, 106c <deregister_tm_clones+0x2c>
+    1064:       mov     x16, x1
+    1068:       br      x16
+    106c:       ret
 
-<register_tm_clones>:
-            ldr r0, [pc, #32]   ; (<register_tm_clones+0x24>)
-            ldr r1, [pc, #36]   ; (<register_tm_clones+0x28>)
-            add r0, pc
-            ldr r2, [pc, #36]   ; (<register_tm_clones+0x2c>)
-            add r1, pc
-            subs        r1, r1, r0
-            add r2, pc
-            lsrs        r3, r1, #31
-            add.w       r1, r3, r1, asr #2
-            asrs        r1, r1, #1
-        /-- beq.n       <register_tm_clones+0x20>
-        |   ldr r3, [pc, #20]   ; (<register_tm_clones+0x30>)
-        |   ldr r3, [r2, r3]
-        +-- cbz r3, <register_tm_clones+0x20>
-        |   bx  r3
-        \-> bx  lr
-            nop
-            .word       0x00011580
-            .word       0x0001157c
-            .word       0x000114d0
-            .word       0x00000094
+0000000000001070 <register_tm_clones>:
+    1070:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    1074:       add     x0, x0, #0xe8
+    1078:       adrp    x1, 13000 <puts@GLIBC_2.17>
+    107c:       add     x1, x1, #0xe8
+    1080:       sub     x1, x1, x0
+    1084:       lsr     x2, x1, #63
+    1088:       add     x1, x2, x1, asr #3
+    108c:       asr     x1, x1, #1
+    1090:       cbz     x1, 10a8 <register_tm_clones+0x38>
+    1094:       adrp    x2, 12000 <__FRAME_END__+0x10250>
+    1098:       ldr     x2, [x2, #4056]
+    109c:       cbz     x2, 10a8 <register_tm_clones+0x38>
+    10a0:       mov     x16, x2
+    10a4:       br      x16
+    10a8:       ret
+    10ac:       nop
 
-<__do_global_dtors_aux>:
-               push     {r3, lr}
-               ldr      r3, [pc, #40]   ; (<__do_global_dtors_aux+0x2c>)
-               ldr      r2, [pc, #40]   ; (<__do_global_dtors_aux+0x30>)
-               add      r3, pc
-               add      r2, pc
-               ldrb     r3, [r3, #0]
-        /----- cbnz     r3, <__do_global_dtors_aux+0x2a>
-        |      ldr      r3, [pc, #36]   ; (<__do_global_dtors_aux+0x34>)
-        |      ldr      r3, [r2, r3]
-        |  /-- cbz      r3, <__do_global_dtors_aux+0x1e>
-        |  |   ldr      r3, [pc, #32]   ; (<__do_global_dtors_aux+0x38>)
-        |  |   add      r3, pc
-        |  |   ldr      r0, [r3, #0]
-        |  |   blx      <__cxa_finalize@plt>
-        |  \-> bl       <deregister_tm_clones>
-        |      ldr      r3, [pc, #24]   ; (<__do_global_dtors_aux+0x3c>)
-        |      movs     r2, #1
-        |      add      r3, pc
-        |      strb     r2, [r3, #0]
-        \----> pop      {r3, pc}
-               .word    0x0001154a
-               .word    0x000114a0
-               .word    0x00000098
-               .word    0x00011536
-               .word    0x0001152a
+00000000000010b0 <__do_global_dtors_aux>:
+    10b0:       stp     x29, x30, [sp, #-32]!
+    10b4:       mov     x29, sp
+    10b8:       str     x19, [sp, #16]
+    10bc:       adrp    x19, 13000 <puts@GLIBC_2.17>
+    10c0:       ldrb    w0, [x19, #232]
+    10c4:       cbnz    w0, 10ec <__do_global_dtors_aux+0x3c>
+    10c8:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    10cc:       ldr     x0, [x0, #4000]
+    10d0:       cbz     x0, 10e0 <__do_global_dtors_aux+0x30>
+    10d4:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    10d8:       ldr     x0, [x0, #208]
+    10dc:       bl      ea0 <__cxa_finalize@plt>
+    10e0:       bl      1040 <deregister_tm_clones>
+    10e4:       mov     w0, #0x1                        // #1
+    10e8:       strb    w0, [x19, #232]
+    10ec:       ldr     x19, [sp, #16]
+    10f0:       ldp     x29, x30, [sp], #32
+    10f4:       ret
+    10f8:       nop
+    10fc:       nop
 
-<frame_dummy>:
-        b.n     <register_tm_clones>
-        nop
+0000000000001100 <frame_dummy>:
+    1100:       b       1070 <register_tm_clones>
 
-<_Z14multi_functionPv>:
+0000000000001104 <_Z14multi_functionPv>:
 };
 
 
 
 
 void *multi_function(void *arg) { //dummy function setup for pthread
-        push    {r7}
-        sub     sp, #12
-        add     r7, sp, #0
-        str     r0, [r7, #4]
+    1104:       sub     sp, sp, #0x10
+    1108:       str     x0, [sp, #8]
     //code
 };
-        nop
-        mov     r0, r3
-        adds    r7, #12
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
+    110c:       nop
+    1110:       add     sp, sp, #0x10
+    1114:       ret
 
-<_Z11my_functionv>:
+0000000000001118 <_Z11my_functionv>:
 
 void my_function() { //dummy function
-        push    {r7}
-        add     r7, sp, #0
         //code
 };
-        nop
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
+    1118:       nop
+    111c:       ret
 
-<_Z19Function_Parametersii>:
+0000000000001120 <_Z19Function_Parametersii>:
 
 void Function_Parameters(int y, int h){ //dummy function
-        push    {r7}
-        sub     sp, #12
-        add     r7, sp, #0
-        str     r0, [r7, #4]
-        str     r1, [r7, #0]
+    1120:       sub     sp, sp, #0x10
+    1124:       str     w0, [sp, #12]
+    1128:       str     w1, [sp, #8]
     //code
 };
-        nop
-        adds    r7, #12
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
+    112c:       nop
+    1130:       add     sp, sp, #0x10
+    1134:       ret
 
-<main>:
+0000000000001138 <main>:
 
 
 
 
 int main (int argc, char **argv) //main function, this is absolutly nessecary
 { // argc and argv allow comandline options to be passed
-                        stmdb   sp!, {r4, r5, r6, r7, r8, lr}
-                        sub     sp, #280        ; 0x118
-                        add     r7, sp, #0
-                        add.w   r3, r7, #280    ; 0x118
-                        sub.w   r3, r3, #276    ; 0x114
-                        str     r0, [r3, #0]
-                        add.w   r3, r7, #280    ; 0x118
-                        sub.w   r3, r3, #280    ; 0x118
-                        str     r1, [r3, #0]
-                        ldr.w   r4, [pc, #1568] ; <main+0x63e>
-                        add     r4, pc
+    1138:       stp     x29, x30, [sp, #-448]!
+    113c:       mov     x29, sp
+    1140:       stp     x19, x20, [sp, #16]
+    1144:       str     x21, [sp, #32]
+    1148:       str     w0, [sp, #60]
+    114c:       str     x1, [sp, #48]
 
 //creating an object
 name_of_class name_of_object;
-                        add.w   r3, r7, #184    ; 0xb8
-                        mov     r0, r3
-                        bl      <_ZN13name_of_classC1Ev>
+    1150:       add     x0, sp, #0x138
+    1154:       bl      18e8 <_ZN13name_of_classC1Ev>
 
 //calling a method
 name_of_object.member_function;
 
 //calling functions
 my_function();
-                        bl      <_Z11my_functionv>
+    1158:       bl      1118 <_Z11my_functionv>
 
 //calling a function with parameters
 Function_Parameters(1,2);
-                        movs    r1, #2
-                        movs    r0, #1
-                        bl      <_Z19Function_Parametersii>
+    115c:       mov     w1, #0x2                        // #2
+    1160:       mov     w0, #0x1                        // #1
+    1164:       bl      1120 <_Z19Function_Parametersii>
 
 //calling member functions
 name_of_class::member_function();
-                        bl      <_ZN13name_of_class15member_functionEv>
+    1168:       bl      18cc <_ZN13name_of_class15member_functionEv>
 //calling int main(); can cause a memory leak!
 
 
 //varaibles and data types
 //dont use letters like me
 int x = 50; //interger
-                        movs    r3, #50 ; 0x32
-                        str.w   r3, [r7, #180]  ; 0xb4
+    116c:       mov     w0, #0x32                       // #50
+    1170:       str     w0, [sp, #308]
 double q = 4.6; //float
-                        addw    r3, pc, #1520   ; 0x5f0
-                        ldrd    r2, r3, [r3]
-                        strd    r2, r3, [r7, #256]      ; 0x100
+    1174:       mov     x0, #0x6666666666666666         // #7378697629483820646
+    1178:       movk    x0, #0x4012, lsl #48
+    117c:       fmov    d0, x0
+    1180:       str     d0, [sp, #424]
 float b = 1.1; //float
-                        movw    r3, #52429      ; 0xcccd
-                        movt    r3, #16268      ; 0x3f8c
-                        str.w   r3, [r7, #252]  ; 0xfc
+    1184:       mov     w0, #0xcccd                     // #52429
+    1188:       movk    w0, #0x3f8c, lsl #16
+    118c:       fmov    s0, w0
+    1190:       str     s0, [sp, #420]
 bool sky_is_blue = true; //true or false
-                        movs    r3, #1
-                        strb.w  r3, [r7, #251]  ; 0xfb
+    1194:       mov     w0, #0x1                        // #1
+    1198:       strb    w0, [sp, #419]
 char d = 'F'; //character
-                        movs    r3, #70 ; 0x46
-                        strb.w  r3, [r7, #250]  ; 0xfa
+    119c:       mov     w0, #0x46                       // #70
+    11a0:       strb    w0, [sp, #418]
 std::string intro = "hello world"; //string
-                        add.w   r3, r7, #196    ; 0xc4
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r2, r7, #196    ; 0xc4
-                        add.w   r3, r7, #156    ; 0x9c
-                        ldr.w   r1, [pc, #1480] ; <main+0x642>
-                        add     r1, pc
-                        mov     r0, r3
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
-                        add.w   r3, r7, #196    ; 0xc4
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
+    11a4:       add     x0, sp, #0x148
+    11a8:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    11ac:       add     x0, sp, #0x148
+    11b0:       add     x3, sp, #0x110
+    11b4:       mov     x2, x0
+    11b8:       adrp    x0, 1000 <_start+0x10>
+    11bc:       add     x1, x0, #0x9d8
+    11c0:       mov     x0, x3
+    11c4:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    11c8:       add     x0, sp, #0x148
+    11cc:       bl      f10 <_ZNSaIcED1Ev@plt>
 std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
-                        add.w   r6, r7, #60     ; 0x3c
-                        movs    r5, #3
-                        add.w   r3, r7, #200    ; 0xc8
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r3, r7, #200    ; 0xc8
-                        mov     r2, r3
-                        ldr.w   r3, [pc, #1440] ; <main+0x646>
-                        add     r3, pc
-                        mov     r1, r3
-                        mov     r0, r6
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    11d0:       add     x20, sp, #0x90
+    11d4:       mov     x19, #0x3                       // #3
+    11d8:       add     x0, sp, #0x150
+    11dc:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    11e0:       add     x0, sp, #0x150
+    11e4:       mov     x2, x0
+    11e8:       adrp    x0, 1000 <_start+0x10>
+    11ec:       add     x1, x0, #0x9e8
+    11f0:       mov     x0, x20
+    11f4:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
 #if __cpp_deduction_guides && ! defined _GLIBCXX_DEFINING_STRING_INSTANTIATIONS
       // _GLIBCXX_RESOLVE_LIB_DEFECTS
       // 3076. basic_string CTAD ambiguity
       template<typename = _RequireAllocator<_Alloc>>
 #endif
       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
-                        add.w   r3, r7, #200    ; 0xc8
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
-                        add.w   r8, r6, #24
-                        subs    r5, #1
-                        add.w   r3, r7, #204    ; 0xcc
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r3, r7, #204    ; 0xcc
-                        mov     r2, r3
-                        ldr.w   r3, [pc, #1396] ; <main+0x64a>
-                        add     r3, pc
-                        mov     r1, r3
-                        mov     r0, r8
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
-                        add.w   r3, r7, #204    ; 0xcc
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
-                        add.w   r8, r8, #24
-                        subs    r5, #1
-                        add.w   r3, r7, #208    ; 0xd0
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r3, r7, #208    ; 0xd0
-                        mov     r2, r3
-                        ldr.w   r3, [pc, #1356] ; <main+0x64e>
-                        add     r3, pc
-                        mov     r1, r3
-                        mov     r0, r8
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
-                        add.w   r3, r7, #208    ; 0xd0
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
-                        add.w   r8, r8, #24
-                        subs    r5, #1
-                        add.w   r3, r7, #212    ; 0xd4
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r3, r7, #212    ; 0xd4
-                        mov     r2, r3
-                        ldr.w   r3, [pc, #1312] ; <main+0x652>
-                        add     r3, pc
-                        mov     r1, r3
-                        mov     r0, r8
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
-                        add.w   r3, r7, #212    ; 0xd4
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
+    11f8:       add     x0, sp, #0x150
+    11fc:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1200:       add     x21, x20, #0x20
+    1204:       sub     x19, x19, #0x1
+    1208:       add     x0, sp, #0x158
+    120c:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    1210:       add     x0, sp, #0x158
+    1214:       mov     x2, x0
+    1218:       adrp    x0, 1000 <_start+0x10>
+    121c:       add     x1, x0, #0x9f0
+    1220:       mov     x0, x21
+    1224:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    1228:       add     x0, sp, #0x158
+    122c:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1230:       add     x21, x21, #0x20
+    1234:       sub     x19, x19, #0x1
+    1238:       add     x0, sp, #0x160
+    123c:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    1240:       add     x0, sp, #0x160
+    1244:       mov     x2, x0
+    1248:       adrp    x0, 1000 <_start+0x10>
+    124c:       add     x1, x0, #0x9f8
+    1250:       mov     x0, x21
+    1254:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    1258:       add     x0, sp, #0x160
+    125c:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1260:       add     x21, x21, #0x20
+    1264:       sub     x19, x19, #0x1
+    1268:       add     x0, sp, #0x168
+    126c:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    1270:       add     x0, sp, #0x168
+    1274:       mov     x2, x0
+    1278:       adrp    x0, 1000 <_start+0x10>
+    127c:       add     x1, x0, #0xa00
+    1280:       mov     x0, x21
+    1284:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    1288:       add     x0, sp, #0x168
+    128c:       bl      f10 <_ZNSaIcED1Ev@plt>
 auto n = 36;
-                        movs    r3, #36 ; 0x24
-                        str.w   r3, [r7, #244]  ; 0xf4
+    1290:       mov     w0, #0x24                       // #36
+    1294:       str     w0, [sp, #412]
 volatile int y; //
 const int v = 100; //constant
-                        movs    r3, #100        ; 0x64
-                        str.w   r3, [r7, #240]  ; 0xf0
+    1298:       mov     w0, #0x64                       // #100
+    129c:       str     w0, [sp, #408]
 unsigned int o; //cant be negative
 signed r;
 long i;
 
 //increment operator
 ++x; //not the same
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        adds    r3, #1
-                        str.w   r3, [r7, #180]  ; 0xb4
+    12a0:       ldr     w0, [sp, #308]
+    12a4:       add     w0, w0, #0x1
+    12a8:       str     w0, [sp, #308]
 x++;
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        adds    r3, #1
-                        str.w   r3, [r7, #180]  ; 0xb4
+    12ac:       ldr     w0, [sp, #308]
+    12b0:       add     w0, w0, #0x1
+    12b4:       str     w0, [sp, #308]
 //deincrement operator
 --x;
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        subs    r3, #1
-                        str.w   r3, [r7, #180]  ; 0xb4
+    12b8:       ldr     w0, [sp, #308]
+    12bc:       sub     w0, w0, #0x1
+    12c0:       str     w0, [sp, #308]
 x--;
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        subs    r3, #1
-                        str.w   r3, [r7, #180]  ; 0xb4
+    12c4:       ldr     w0, [sp, #308]
+    12c8:       sub     w0, w0, #0x1
+    12cc:       str     w0, [sp, #308]
 
 //sizeoff operator
 x = sizeof (char); //returns the size in bytes 
-                        movs    r3, #1
-                        str.w   r3, [r7, #180]  ; 0xb4
+    12d0:       mov     w0, #0x1                        // #1
+    12d4:       str     w0, [sp, #308]
 !false;  // evaluates to true 
 
 volatile int g; //stop compiler optimization
 
 //logical NOT Operator
 !g;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12d8:       ldr     w0, [sp, #136]
 
 //bitwise NOT Operator
 ~g;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12dc:       ldr     w0, [sp, #136]
 
 //bitwise shift Operator
 g >> 1;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12e0:       ldr     w0, [sp, #136]
 g << 1;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12e4:       ldr     w0, [sp, #136]
 
 //bitwise AND Operator
 g & 10;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12e8:       ldr     w0, [sp, #136]
 
 //bitwise XOR Operator
 g ^ 10;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12ec:       ldr     w0, [sp, #136]
 
 //bitwise OR Operator
 g | 10;
-                        ldr     r3, [r7, #52]   ; 0x34
+    12f0:       ldr     w0, [sp, #136]
 //(6 >= 6)     evaluates to true
 //(5 < 5)      evaluates to false 
 
 
 //print stuff
 std::cout << "Hello world\n";
-                        ldr.w   r3, [pc, #1220] ; <main+0x656>
-                        add     r3, pc
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1216] ; <main+0x65a>
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    12f4:       adrp    x0, 1000 <_start+0x10>
+    12f8:       add     x1, x0, #0xa08
+    12fc:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    1300:       ldr     x0, [x0, #4008]
+    1304:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
 printf ("Hello world\n");
-                        ldr.w   r3, [pc, #1208] ; <main+0x65e>
-                        add     r3, pc
-                        mov     r0, r3
-                        blx     <puts@plt>
+    1308:       adrp    x0, 1000 <_start+0x10>
+    130c:       add     x0, x0, #0xa18
+    1310:       bl      e60 <puts@plt>
 // "\n" makes a new line
 
 
 //printing varables
 printf ("%d", x); //%d is for an integer but %f would be for float or %s would be for a string
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1196] ; <main+0x662>
-                        add     r3, pc
-                        mov     r0, r3
-                        blx     <printf@plt>
+    1314:       ldr     w0, [sp, #308]
+    1318:       mov     w1, w0
+    131c:       adrp    x0, 1000 <_start+0x10>
+    1320:       add     x0, x0, #0xa28
+    1324:       bl      fe0 <printf@plt>
 std::cout << x; // a simpler way
-                        ldr.w   r3, [r7, #180]  ; 0xb4
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1168] ; <main+0x65a>
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZNSolsEi@plt>
+    1328:       ldr     w0, [sp, #308]
+    132c:       mov     w1, w0
+    1330:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    1334:       ldr     x0, [x0, #4008]
+    1338:       bl      fa0 <_ZNSolsEi@plt>
 
 
 //starting a new line
 std::cout << "\n";
-                        ldr.w   r3, [pc, #1168] ; <main+0x666>
-                        add     r3, pc
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1148] ; <main+0x65a>
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    133c:       adrp    x0, 1000 <_start+0x10>
+    1340:       add     x1, x0, #0xa30
+    1344:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    1348:       ldr     x0, [x0, #4008]
+    134c:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
 
 
 //input
 std::cout << "input any text: ";
-                        ldr.w   r3, [pc, #1152] ; <main+0x66a>
-                        add     r3, pc
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1128] ; <main+0x65a>
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    1350:       adrp    x0, 1000 <_start+0x10>
+    1354:       add     x1, x0, #0xa38
+    1358:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    135c:       ldr     x0, [x0, #4008]
+    1360:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
 scanf ("%d", &x); //both take the input of x 
-                        add.w   r3, r7, #180    ; 0xb4
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1132] ; <main+0x66e>
-                        add     r3, pc
-                        mov     r0, r3
-                        blx     <__isoc99_scanf@plt>
+    1364:       add     x0, sp, #0x134
+    1368:       mov     x1, x0
+    136c:       adrp    x0, 1000 <_start+0x10>
+    1370:       add     x0, x0, #0xa28
+    1374:       bl      ed0 <__isoc99_scanf@plt>
 std::cin >> x;
-                        add.w   r3, r7, #180    ; 0xb4
-                        mov     r1, r3
-                        ldr.w   r3, [pc, #1116] ; <main+0x672>
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZNSirsERi@plt>
+    1378:       add     x0, sp, #0x134
+    137c:       mov     x1, x0
+    1380:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    1384:       ldr     x0, [x0, #4040]
+    1388:       bl      eb0 <_ZNSirsERi@plt>
 
 
 //conditionals
 
 if (g == 10)
-                        ldr     r3, [r7, #52]   ; 0x34
-                        cmp     r3, #10
-                        ite     eq
-                        moveq   r3, #1
-                        movne   r3, #0
-                        uxtb    r3, r3
-                        cmp     r3, #0
-                    /-- bne.n   <main+0x232>
+    138c:       ldr     w0, [sp, #136]
+    1390:       cmp     w0, #0xa
+    1394:       cset    w0, eq  // eq = none
+    1398:       and     w0, w0, #0xff
+    139c:       cmp     w0, #0x0
+    13a0:       b.ne    13ac <main+0x274>  // b.any
 {
         //do stuff
 }
 else if (g == 20)
-                    |   ldr     r3, [r7, #52]   ; 0x34
-                    |   cmp     r3, #20
+    13a4:       ldr     w0, [sp, #136]
+    13a8:       cmp     w0, #0x14
         //more stuff
 }
 
 
 //extremely powerful
 switch(x) {
-                    \-> ldr.w   r3, [r7, #180]  ; 0xb4
-                        cmp     r3, #45 ; 0x2d
-                    /-- bgt.n   <main+0x2ca>
-                    |   cmp     r3, #15
-                 /--|-- blt.n   <main+0x304>
-                 |  |   subs    r3, #15
-                 |  |   cmp     r3, #30
-                 +--|-- bhi.n   <main+0x304>
-                 |  |   add     r2, pc, #8      ; (adr r2, <main+0x24e>)
-                 |  |   ldr.w   r3, [r2, r3, lsl #2]
-                 |  |   add     r2, r3
-                 |  |   bx      r2
-                 |  |   .word   0x00000083
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x0000008d
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x00000097
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000b7
-                 |  |   .word   0x000000a1
-                 |  \-> cmp     r3, #64 ; 0x40
-                 |  /-- beq.n   <main+0x2f8>
-                 +--|-- b.n     <main+0x304>
+    13ac:       ldr     w0, [sp, #308]
+    13b0:       cmp     w0, #0x40
+    13b4:       b.eq    1424 <main+0x2ec>  // b.none
+    13b8:       cmp     w0, #0x40
+    13bc:       b.gt    1434 <main+0x2fc>
+    13c0:       cmp     w0, #0x2d
+    13c4:       b.eq    1418 <main+0x2e0>  // b.none
+    13c8:       cmp     w0, #0x2d
+    13cc:       b.gt    1434 <main+0x2fc>
+    13d0:       cmp     w0, #0x23
+    13d4:       b.eq    140c <main+0x2d4>  // b.none
+    13d8:       cmp     w0, #0x23
+    13dc:       b.gt    1434 <main+0x2fc>
+    13e0:       cmp     w0, #0xf
+    13e4:       b.eq    13f4 <main+0x2bc>  // b.none
+    13e8:       cmp     w0, #0x14
+    13ec:       b.eq    1400 <main+0x2c8>  // b.none
+    13f0:       b       1434 <main+0x2fc>
         case 15:
                 printf ("the value of x is 15");
-                 |  |   ldr     r3, [pc, #932]  ; (<main+0x676>)
-                 |  |   add     r3, pc
-                 |  |   mov     r0, r3
-                 |  |   blx     <printf@plt>
+    13f4:       adrp    x0, 1000 <_start+0x10>
+    13f8:       add     x0, x0, #0xa50
+    13fc:       bl      fe0 <printf@plt>
         case 20:
                 printf ("the value of x is 20");
-                 |  |   ldr     r3, [pc, #924]  ; (<main+0x67a>)
-                 |  |   add     r3, pc
-                 |  |   mov     r0, r3
-                 |  |   blx     <printf@plt>
+    1400:       adrp    x0, 1000 <_start+0x10>
+    1404:       add     x0, x0, #0xa68
+    1408:       bl      fe0 <printf@plt>
         case 35:
                 printf ("the value of x is 35");
-                 |  |   ldr     r3, [pc, #920]  ; (<main+0x67e>)
-                 |  |   add     r3, pc
-                 |  |   mov     r0, r3
-                 |  |   blx     <printf@plt>
+    140c:       adrp    x0, 1000 <_start+0x10>
+    1410:       add     x0, x0, #0xa80
+    1414:       bl      fe0 <printf@plt>
         case 45:
                 printf ("the value of x is 45");
-                 |  |   ldr     r3, [pc, #912]  ; (<main+0x682>)
-                 |  |   add     r3, pc
-                 |  |   mov     r0, r3
-                 |  |   blx     <printf@plt>
+    1418:       adrp    x0, 1000 <_start+0x10>
+    141c:       add     x0, x0, #0xa98
+    1420:       bl      fe0 <printf@plt>
         case 64:
                 printf ("the value of x is 64");
-                 |  \-> ldr     r3, [pc, #908]  ; (<main+0x686>)
-                 |      add     r3, pc
-                 |      mov     r0, r3
-                 |      blx     <printf@plt>
+    1424:       adrp    x0, 1000 <_start+0x10>
+    1428:       add     x0, x0, #0xab0
+    142c:       bl      fe0 <printf@plt>
 
     //break out of somthing
     break;
-                 |      nop
+    1430:       nop
 //Conditional ternary operator
 7==5+2 ? 4 : 3;
 
 
 //Conditional loops
 int j = 0;
-                 \----> movs    r3, #0
-                        str.w   r3, [r7, #276]  ; 0x114
+    1434:       str     wzr, [sp, #444]
 //while loop
 while (j<50){ //repeat until condition is met
-                 /----> ldr.w   r3, [r7, #276]  ; 0x114
-                 |      cmp     r3, #49 ; 0x31
-                 |  /-- bgt.n   <main+0x31e>
+    1438:       ldr     w0, [sp, #444]
+    143c:       cmp     w0, #0x31
+    1440:       b.gt    1454 <main+0x31c>
         //code
 j++;
-                 |  |   ldr.w   r3, [r7, #276]  ; 0x114
-                 |  |   adds    r3, #1
-                 |  |   str.w   r3, [r7, #276]  ; 0x114
+    1444:       ldr     w0, [sp, #444]
+    1448:       add     w0, w0, #0x1
+    144c:       str     w0, [sp, #444]
 while (j<50){ //repeat until condition is met
-                 \--|-- b.n     <main+0x30a>
+    1450:       b       1438 <main+0x300>
 }
 
 
 //for loop
 for (int i = 0; i < 5; i++) {
-                    \-> movs    r3, #0
-                        str.w   r3, [r7, #272]  ; 0x110
-                 /----> ldr.w   r3, [r7, #272]  ; 0x110
-                 |      cmp     r3, #4
-                 |  /-- bgt.n   <main+0x354>
+    1454:       str     wzr, [sp, #440]
+    1458:       ldr     w0, [sp, #440]
+    145c:       cmp     w0, #0x4
+    1460:       b.gt    1498 <main+0x360>
         std::cout << i << "\n";
-                 |  |   ldr.w   r1, [r7, #272]  ; 0x110
-                 |  |   ldr     r3, [pc, #808]  ; (<main+0x65a>)
-                 |  |   ldr     r3, [r4, r3]
-                 |  |   mov     r0, r3
-                 |  |   blx     <_ZNSolsEi@plt>
-                 |  |   mov     r2, r0
-                 |  |   ldr     r3, [pc, #844]  ; (<main+0x68a>)
-                 |  |   add     r3, pc
-                 |  |   mov     r1, r3
-                 |  |   mov     r0, r2
-                 |  |   blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    1464:       ldr     w1, [sp, #440]
+    1468:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    146c:       ldr     x0, [x0, #4008]
+    1470:       bl      fa0 <_ZNSolsEi@plt>
+    1474:       mov     x2, x0
+    1478:       adrp    x0, 1000 <_start+0x10>
+    147c:       add     x1, x0, #0xa30
+    1480:       mov     x0, x2
+    1484:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
 for (int i = 0; i < 5; i++) {
-                 |  |   ldr.w   r3, [r7, #272]  ; 0x110
-                 |  |   adds    r3, #1
-                 |  |   str.w   r3, [r7, #272]  ; 0x110
-                 \--|-- b.n     <main+0x324>
+    1488:       ldr     w0, [sp, #440]
+    148c:       add     w0, w0, #0x1
+    1490:       str     w0, [sp, #440]
+    1494:       b       1458 <main+0x320>
 }
 
 
 //do while loop
 int z = 0;
-                    \-> movs    r3, #0
-                        str.w   r3, [r7, #268]  ; 0x10c
+    1498:       str     wzr, [sp, #436]
 do {
   cout << z << "\n";
-                 /----> ldr.w   r1, [r7, #268]  ; 0x10c
-                 |      ldr     r3, [pc, #760]  ; (<main+0x65a>)
-                 |      ldr     r3, [r4, r3]
-                 |      mov     r0, r3
-                 |      blx     <_ZNSolsEi@plt>
-                 |      mov     r2, r0
-                 |      ldr     r3, [pc, #800]  ; (<main+0x68e>)
-                 |      add     r3, pc
-                 |      mov     r1, r3
-                 |      mov     r0, r2
-                 |      blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    149c:       ldr     w1, [sp, #436]
+    14a0:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    14a4:       ldr     x0, [x0, #4008]
+    14a8:       bl      fa0 <_ZNSolsEi@plt>
+    14ac:       mov     x2, x0
+    14b0:       adrp    x0, 1000 <_start+0x10>
+    14b4:       add     x1, x0, #0xa30
+    14b8:       mov     x0, x2
+    14bc:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
   z++;
-                 |      ldr.w   r3, [r7, #268]  ; 0x10c
-                 |      adds    r3, #1
-                 |      str.w   r3, [r7, #268]  ; 0x10c
+    14c0:       ldr     w0, [sp, #436]
+    14c4:       add     w0, w0, #0x1
+    14c8:       str     w0, [sp, #436]
 }
 while (z < 5);
-                 |      ldr.w   r3, [r7, #268]  ; 0x10c
-                 |      cmp     r3, #4
-                 |  /-- bgt.n   <main+0x38a>
+    14cc:       ldr     w0, [sp, #436]
+    14d0:       cmp     w0, #0x4
+    14d4:       b.gt    14dc <main+0x3a4>
 do {
-                 \--|-- b.n     <main+0x35a>
+    14d8:       b       149c <main+0x364>
 
 
 //continue
 for (int m = 0; m < 10; m++) {
-                    \-> movs    r3, #0
-                        str.w   r3, [r7, #264]  ; 0x108
-           /----------> ldr.w   r3, [r7, #264]  ; 0x108
-           |            cmp     r3, #9
-           |  /-------- bgt.n   <main+0x3cc>
+    14dc:       str     wzr, [sp, #432]
+    14e0:       ldr     w0, [sp, #432]
+    14e4:       cmp     w0, #0x9
+    14e8:       b.gt    1534 <main+0x3fc>
   if (m == 4) {
-           |  |         ldr.w   r3, [r7, #264]  ; 0x108
-           |  |         cmp     r3, #4
-           |  |  /----- beq.n   <main+0x3be>
+    14ec:       ldr     w0, [sp, #432]
+    14f0:       cmp     w0, #0x4
+    14f4:       b.eq    1520 <main+0x3e8>  // b.none
     continue; //skips if m equials 4
   }
   cout << m << "\n";
-           |  |  |      ldr.w   r1, [r7, #264]  ; 0x108
-           |  |  |      ldr     r3, [pc, #692]  ; (<main+0x65a>)
-           |  |  |      ldr     r3, [r4, r3]
-           |  |  |      mov     r0, r3
-           |  |  |      blx     <_ZNSolsEi@plt>
-           |  |  |      mov     r2, r0
-           |  |  |      ldr     r3, [pc, #736]  ; (<main+0x692>)
-           |  |  |      add     r3, pc
-           |  |  |      mov     r1, r3
-           |  |  |      mov     r0, r2
-           |  |  |      blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
-           |  |  |  /-- b.n     <main+0x3c0>
+    14f8:       ldr     w1, [sp, #432]
+    14fc:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    1500:       ldr     x0, [x0, #4008]
+    1504:       bl      fa0 <_ZNSolsEi@plt>
+    1508:       mov     x2, x0
+    150c:       adrp    x0, 1000 <_start+0x10>
+    1510:       add     x1, x0, #0xa30
+    1514:       mov     x0, x2
+    1518:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    151c:       b       1524 <main+0x3ec>
     continue; //skips if m equials 4
-           |  |  \--|-> nop
+    1520:       nop
 for (int m = 0; m < 10; m++) {
-           |  |     \-> ldr.w   r3, [r7, #264]  ; 0x108
-           |  |         adds    r3, #1
-           |  |         str.w   r3, [r7, #264]  ; 0x108
-           \--|-------- b.n     <main+0x390>
+    1524:       ldr     w0, [sp, #432]
+    1528:       add     w0, w0, #0x1
+    152c:       str     w0, [sp, #432]
+    1530:       b       14e0 <main+0x3a8>
 }
 
 
 //goto
 goto label;
-              \-------> nop
+    1534:       nop
 
 
 
 //address operator
 //"&" is put before a varabale or funtion to get the memeory address, example:
 printf ("%d", &x); //this prints the memory address of x, like: 0x401720
-                        add.w   r3, r7, #180    ; 0xb4
-                        mov     r1, r3
-                        ldr     r3, [pc, #704]  ; (<main+0x696>)
-                        add     r3, pc
-                        mov     r0, r3
-                        blx     <printf@plt>
+    1538:       add     x0, sp, #0x134
+    153c:       mov     x1, x0
+    1540:       adrp    x0, 1000 <_start+0x10>
+    1544:       add     x0, x0, #0xa28
+    1548:       bl      fe0 <printf@plt>
 
 
 //pointers
 int* p = &x; //the p varable now holds the memory address of p
-                        add.w   r3, r7, #180    ; 0xb4
-                        str.w   r3, [r7, #236]  ; 0xec
+    154c:       add     x0, sp, #0x134
+    1550:       str     x0, [sp, #400]
 std::cout << p; //prints the memory address of p
-                        ldr.w   r1, [r7, #236]  ; 0xec
-                        ldr     r3, [pc, #620]  ; (<main+0x65a>)
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZNSolsEPKv@plt>
+    1554:       ldr     x1, [sp, #400]
+    1558:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    155c:       ldr     x0, [x0, #4008]
+    1560:       bl      ee0 <_ZNSolsEPKv@plt>
 //void pointer
 
 void* void_pointer;
 
 //NULL pointer
 int* null_pointer = NULL;
-                        movs    r3, #0
-                        str.w   r3, [r7, #232]  ; 0xe8
+    1564:       str     xzr, [sp, #392]
 
 //references
 std::string food = "Pizza";  // food variable
-                        add.w   r3, r7, #216    ; 0xd8
-                        mov     r0, r3
-                        blx     <_ZNSaIcEC1Ev@plt>
-                        add.w   r2, r7, #216    ; 0xd8
-                        add.w   r3, r7, #28
-                        ldr     r1, [pc, #652]  ; (<main+0x69a>)
-                        add     r1, pc
-                        mov     r0, r3
-                        blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
-                        add.w   r3, r7, #216    ; 0xd8
-                        mov     r0, r3
-                        blx     <_ZNSaIcED1Ev@plt>
+    1568:       add     x0, sp, #0x170
+    156c:       bl      fc0 <_ZNSaIcEC1Ev@plt>
+    1570:       add     x0, sp, #0x170
+    1574:       add     x3, sp, #0x68
+    1578:       mov     x2, x0
+    157c:       adrp    x0, 1000 <_start+0x10>
+    1580:       add     x1, x0, #0xac8
+    1584:       mov     x0, x3
+    1588:       bl      f40 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+    158c:       add     x0, sp, #0x170
+    1590:       bl      f10 <_ZNSaIcED1Ev@plt>
 std::string &meal = food;    // reference to food
-                        add.w   r3, r7, #28
-                        str.w   r3, [r7, #228]  ; 0xe4
+    1594:       add     x0, sp, #0x68
+    1598:       str     x0, [sp, #384]
 
 //dereferencing pointers
 std::cout << *p; //instead of printing the memory address of p, this prints the value of p (25)
-                        ldr.w   r3, [r7, #236]  ; 0xec
-                        ldr     r3, [r3, #0]
-                        mov     r1, r3
-                        ldr     r3, [pc, #552]  ; (<main+0x65a>)
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZNSolsEi@plt>
+    159c:       ldr     x0, [sp, #400]
+    15a0:       ldr     w0, [x0]
+    15a4:       mov     w1, w0
+    15a8:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    15ac:       ldr     x0, [x0, #4008]
+    15b0:       bl      fa0 <_ZNSolsEi@plt>
 
 
 std::cout << "\n";
-                        ldr     r3, [pc, #608]  ; (<main+0x69e>)
-                        add     r3, pc
-                        mov     r1, r3
-                        ldr     r3, [pc, #536]  ; (<main+0x65a>)
-                        ldr     r3, [r4, r3]
-                        mov     r0, r3
-                        blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    15b4:       adrp    x0, 1000 <_start+0x10>
+    15b8:       add     x1, x0, #0xa30
+    15bc:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    15c0:       ldr     x0, [x0, #4008]
+    15c4:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
 
 
 //exceptions
 
 try { // Block of code to try
   int age = 15;
-                        movs    r3, #15
-                        str.w   r3, [r7, #224]  ; 0xe0
+    15c8:       mov     w0, #0xf                        // #15
+    15cc:       str     w0, [sp, #380]
   if (age >= 18) {
-                        ldr.w   r3, [r7, #224]  ; 0xe0
-                        cmp     r3, #17
-                    /-- ble.n   <main+0x46a>
+    15d0:       ldr     w0, [sp, #380]
+    15d4:       cmp     w0, #0x11
+    15d8:       b.le    15f4 <main+0x4bc>
     std::cout << "Access granted - you are old enough.\n";
-                    |   ldr     r3, [pc, #584]  ; (<main+0x6a2>)
-                    |   add     r3, pc
-                    |   mov     r1, r3
-                    |   ldr     r3, [pc, #504]  ; (<main+0x65a>)
-                    |   ldr     r3, [r4, r3]
-                    |   mov     r0, r3
-                    |   blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
-        /-----------|-- b.n     <main+0x486>
+    15dc:       adrp    x0, 1000 <_start+0x10>
+    15e0:       add     x1, x0, #0xad0
+    15e4:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    15e8:       ldr     x0, [x0, #4008]
+    15ec:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    15f0:       b       1614 <main+0x4dc>
   } else {
     throw 505; // Throw an exception when a problem arise
-        |           \-> movs    r0, #4
-        |               blx     <__cxa_allocate_exception@plt>
-        |               mov     r3, r0
-        |               mov     r0, r3
-        |               movw    r3, #505        ; 0x1f9
-        |               str     r3, [r0, #0]
-        |               movs    r2, #0
-        |               ldr     r3, [pc, #552]  ; (<main+0x6a6>)
-        |               ldr     r3, [r4, r3]
-        |               mov     r1, r3
-        |               blx     <__cxa_throw@plt>
+    15f4:       mov     x0, #0x4                        // #4
+    15f8:       bl      e90 <__cxa_allocate_exception@plt>
+    15fc:       mov     w1, #0x1f9                      // #505
+    1600:       str     w1, [x0]
+    1604:       mov     x2, #0x0                        // #0
+    1608:       adrp    x1, 12000 <__FRAME_END__+0x10250>
+    160c:       ldr     x1, [x1, #3984]
+    1610:       bl      f90 <__cxa_throw@plt>
 
 //multi-threading in C
 
 pthread_t t1, t2, t3, t4; //Create 4 threads
 
 pthread_create(&t1, NULL, multi_function, NULL); //starting threads
-        >-------------> add.w   r0, r7, #24
-        |               movs    r3, #0
-        |               ldr     r2, [pc, #540]  ; (<main+0x6aa>)
-        |               add     r2, pc
-        |               movs    r1, #0
-        |               blx     <pthread_create@plt>
+    1614:       add     x4, sp, #0x60
+    1618:       mov     x3, #0x0                        // #0
+    161c:       adrp    x0, 1000 <_start+0x10>
+    1620:       add     x2, x0, #0x104
+    1624:       mov     x1, #0x0                        // #0
+    1628:       mov     x0, x4
+    162c:       bl      f30 <pthread_create@plt>
 pthread_create(&t2, NULL, multi_function, NULL);
-        |               add.w   r0, r7, #20
-        |               movs    r3, #0
-        |               ldr     r2, [pc, #528]  ; (<main+0x6ae>)
-        |               add     r2, pc
-        |               movs    r1, #0
-        |               blx     <pthread_create@plt>
+    1630:       add     x4, sp, #0x58
+    1634:       mov     x3, #0x0                        // #0
+    1638:       adrp    x0, 1000 <_start+0x10>
+    163c:       add     x2, x0, #0x104
+    1640:       mov     x1, #0x0                        // #0
+    1644:       mov     x0, x4
+    1648:       bl      f30 <pthread_create@plt>
 pthread_create(&t3, NULL, multi_function, NULL);
-        |               add.w   r0, r7, #16
-        |               movs    r3, #0
-        |               ldr     r2, [pc, #516]  ; (<main+0x6b2>)
-        |               add     r2, pc
-        |               movs    r1, #0
-        |               blx     <pthread_create@plt>
+    164c:       add     x4, sp, #0x50
+    1650:       mov     x3, #0x0                        // #0
+    1654:       adrp    x0, 1000 <_start+0x10>
+    1658:       add     x2, x0, #0x104
+    165c:       mov     x1, #0x0                        // #0
+    1660:       mov     x0, x4
+    1664:       bl      f30 <pthread_create@plt>
 pthread_create(&t4, NULL, multi_function, NULL);
-        |               add.w   r0, r7, #12
-        |               movs    r3, #0
-        |               ldr     r2, [pc, #504]  ; (<main+0x6b6>)
-        |               add     r2, pc
-        |               movs    r1, #0
-        |               blx     <pthread_create@plt>
+    1668:       add     x4, sp, #0x48
+    166c:       mov     x3, #0x0                        // #0
+    1670:       adrp    x0, 1000 <_start+0x10>
+    1674:       add     x2, x0, #0x104
+    1678:       mov     x1, #0x0                        // #0
+    167c:       mov     x0, x4
+    1680:       bl      f30 <pthread_create@plt>
 
 pthread_join(t1, NULL); //Closing the threads back to main thread
-        |               add.w   r3, r7, #280    ; 0x118
-        |               sub.w   r3, r3, #256    ; 0x100
-        |               ldr     r3, [r3, #0]
-        |               movs    r1, #0
-        |               mov     r0, r3
-        |               blx     <pthread_join@plt>
+    1684:       ldr     x0, [sp, #96]
+    1688:       mov     x1, #0x0                        // #0
+    168c:       bl      e70 <pthread_join@plt>
 pthread_join(t2, NULL);
-        |               add.w   r3, r7, #280    ; 0x118
-        |               sub.w   r3, r3, #260    ; 0x104
-        |               ldr     r3, [r3, #0]
-        |               movs    r1, #0
-        |               mov     r0, r3
-        |               blx     <pthread_join@plt>
+    1690:       ldr     x0, [sp, #88]
+    1694:       mov     x1, #0x0                        // #0
+    1698:       bl      e70 <pthread_join@plt>
 pthread_join(t3, NULL);
-        |               add.w   r3, r7, #280    ; 0x118
-        |               sub.w   r3, r3, #264    ; 0x108
-        |               ldr     r3, [r3, #0]
-        |               movs    r1, #0
-        |               mov     r0, r3
-        |               blx     <pthread_join@plt>
+    169c:       ldr     x0, [sp, #80]
+    16a0:       mov     x1, #0x0                        // #0
+    16a4:       bl      e70 <pthread_join@plt>
 pthread_join(t4, NULL);
-        |               add.w   r3, r7, #280    ; 0x118
-        |               sub.w   r3, r3, #268    ; 0x10c
-        |               ldr     r3, [r3, #0]
-        |               movs    r1, #0
-        |               mov     r0, r3
-        |               blx     <pthread_join@plt>
+    16a8:       ldr     x0, [sp, #72]
+    16ac:       mov     x1, #0x0                        // #0
+    16b0:       bl      e70 <pthread_join@plt>
 //core1.join(); //Closing the threads back to main thread
 //core2.join();
 //core3.join();
 //core4.join(); //doesnt have to be core, it can be whatever you want to call it
 
 return 0; //important because int main has a integer return type
-        |               movs    r5, #0
+    16b4:       mov     w20, #0x0                       // #0
 std::string food = "Pizza";  // food variable
-        |               add.w   r3, r7, #28
-        |               mov     r0, r3
-        |               blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    16b8:       add     x0, sp, #0x68
+    16bc:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
 std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
-        |               add.w   r4, r7, #60     ; 0x3c
-        |               adds    r4, #96 ; 0x60
-        |        /----> add.w   r3, r7, #60     ; 0x3c
-        |        |      cmp     r4, r3
-        |        |  /-- beq.n   <main+0x532>
-        |        |  |   subs    r4, #24
-        |        |  |   mov     r0, r4
-        |        |  |   blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-        |        \--|-- b.n     <main+0x520>
+    16c0:       add     x19, sp, #0x90
+    16c4:       add     x19, x19, #0x80
+    16c8:       add     x0, sp, #0x90
+    16cc:       cmp     x19, x0
+    16d0:       b.eq    16e4 <main+0x5ac>  // b.none
+    16d4:       sub     x19, x19, #0x20
+    16d8:       mov     x0, x19
+    16dc:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    16e0:       b       16c8 <main+0x590>
 std::string intro = "hello world"; //string
-        |           \-> add.w   r3, r7, #156    ; 0x9c
-        |               mov     r0, r3
-        |               blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-        |               mov     r3, r5
-        |  /----------- b.n     <main+0x62a>
-        |  |            add.w   r3, r7, #196    ; 0xc4
-        |  |            mov     r0, r3
-        |  |            blx     <_ZNSaIcED1Ev@plt>
-        |  |            blx     <__cxa_end_cleanup@plt>
-        |  |            add.w   r3, r7, #200    ; 0xc8
-        |  |            mov     r0, r3
-        |  |            blx     <_ZNSaIcED1Ev@plt>
-        |  |        /-- b.n     <main+0x57c>
-        |  |        |   add.w   r3, r7, #204    ; 0xcc
-        |  |        |   mov     r0, r3
-        |  |        |   blx     <_ZNSaIcED1Ev@plt>
-        |  |        +-- b.n     <main+0x57c>
-        |  |        |   add.w   r3, r7, #208    ; 0xd0
-        |  |        |   mov     r0, r3
-        |  |        |   blx     <_ZNSaIcED1Ev@plt>
-        |  |        +-- b.n     <main+0x57c>
-        |  |        |   add.w   r3, r7, #212    ; 0xd4
-        |  |        |   mov     r0, r3
-        |  |        |   blx     <_ZNSaIcED1Ev@plt>
-        |  |        \-> cmp     r6, #0
-        |  |  /-------- beq.n   <main+0x61c>
+    16e4:       add     x0, sp, #0x110
+    16e8:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    16ec:       mov     w0, w20
+    16f0:       b       1840 <main+0x708>
+    16f4:       mov     x19, x0
+    16f8:       add     x0, sp, #0x148
+    16fc:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1700:       mov     x0, x19
+    1704:       bl      fb0 <_Unwind_Resume@plt>
+    1708:       mov     x21, x0
+    170c:       add     x0, sp, #0x150
+    1710:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1714:       b       1744 <main+0x60c>
+    1718:       mov     x21, x0
+    171c:       add     x0, sp, #0x158
+    1720:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1724:       b       1744 <main+0x60c>
+    1728:       mov     x21, x0
+    172c:       add     x0, sp, #0x160
+    1730:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1734:       b       1744 <main+0x60c>
+    1738:       mov     x21, x0
+    173c:       add     x0, sp, #0x168
+    1740:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1744:       cmp     x20, #0x0
+    1748:       b.eq    1774 <main+0x63c>  // b.none
 std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
-        |  |  |         rsb     r3, r5, #3
-        |  |  |         mov     r2, r3
-        |  |  |         movs    r3, #24
-        |  |  |         mul.w   r3, r2, r3
-        |  |  |         adds    r4, r6, r3
-        |  |  |     /-> cmp     r4, r6
-        |  |  +-----|-- beq.n   <main+0x61c>
-        |  |  |     |   subs    r4, #24
-        |  |  |     |   mov     r0, r4
-        |  |  |     |   blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-        |  |  |     \-- b.n     <main+0x58e>
-        |  |  |         add.w   r3, r7, #216    ; 0xd8
-        |  |  |         mov     r0, r3
-        |  |  |         blx     <_ZNSaIcED1Ev@plt>
-        |  |  |  /----- b.n     <main+0x604>
+    174c:       mov     x0, #0x3                        // #3
+    1750:       sub     x0, x0, x19
+    1754:       lsl     x0, x0, #5
+    1758:       add     x19, x20, x0
+    175c:       cmp     x19, x20
+    1760:       b.eq    1774 <main+0x63c>  // b.none
+    1764:       sub     x19, x19, #0x20
+    1768:       mov     x0, x19
+    176c:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    1770:       b       175c <main+0x624>
+    1774:       mov     x19, x21
+    1778:       b       1830 <main+0x6f8>
+    177c:       mov     x19, x0
+    1780:       add     x0, sp, #0x170
+    1784:       bl      f10 <_ZNSaIcED1Ev@plt>
+    1788:       mov     x20, x19
+    178c:       b       1808 <main+0x6d0>
 catch (int myNum) { // Block of code to handle errors 
-        |  |  |  |      mov     r2, r0
-        |  |  |  |      mov     r3, r1
-        |  |  |  |      cmp     r3, #1
-        |  |  |  |  /-- bne.n   <main+0x5f8>
-        |  |  |  |  |   mov     r3, r2
-        |  |  |  |  |   mov     r0, r3
-        |  |  |  |  |   blx     <__cxa_begin_catch@plt>
-        |  |  |  |  |   mov     r3, r0
-        |  |  |  |  |   ldr     r3, [r3, #0]
-        |  |  |  |  |   str.w   r3, [r7, #220]  ; 0xdc
+    1790:       cmp     x1, #0x1
+    1794:       b.eq    17a0 <main+0x668>  // b.none
+    1798:       mov     x19, x0
+    179c:       b       17f4 <main+0x6bc>
+    17a0:       bl      e80 <__cxa_begin_catch@plt>
+    17a4:       ldr     w0, [x0]
+    17a8:       str     w0, [sp, #376]
   std::cout << "Access denied - You must be at least 18 years old.\n";
-        |  |  |  |  |   ldr     r3, [pc, #248]  ; (<main+0x6ba>)
-        |  |  |  |  |   add     r3, pc
-        |  |  |  |  |   mov     r1, r3
-        |  |  |  |  |   ldr     r3, [pc, #144]  ; (<main+0x65a>)
-        |  |  |  |  |   ldr     r3, [r4, r3]
-        |  |  |  |  |   mov     r0, r3
-        |  |  |  |  |   blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    17ac:       adrp    x0, 1000 <_start+0x10>
+    17b0:       add     x1, x0, #0xaf8
+    17b4:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    17b8:       ldr     x0, [x0, #4008]
+    17bc:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
   std::cout << "Error number: " << myNum;
-        |  |  |  |  |   ldr     r3, [pc, #236]  ; (<main+0x6be>)
-        |  |  |  |  |   add     r3, pc
-        |  |  |  |  |   mov     r1, r3
-        |  |  |  |  |   ldr     r3, [pc, #128]  ; (<main+0x65a>)
-        |  |  |  |  |   ldr     r3, [r4, r3]
-        |  |  |  |  |   mov     r0, r3
-        |  |  |  |  |   blx     <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
-        |  |  |  |  |   mov     r3, r0
-        |  |  |  |  |   ldr.w   r1, [r7, #220]  ; 0xdc
-        |  |  |  |  |   mov     r0, r3
-        |  |  |  |  |   blx     <_ZNSolsEi@plt>
+    17c0:       adrp    x0, 1000 <_start+0x10>
+    17c4:       add     x1, x0, #0xb30
+    17c8:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    17cc:       ldr     x0, [x0, #4008]
+    17d0:       bl      f00 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    17d4:       ldr     w1, [sp, #376]
+    17d8:       bl      fa0 <_ZNSolsEi@plt>
 catch (int myNum) { // Block of code to handle errors 
-        |  |  |  |  |   blx     <__cxa_end_catch@plt>
-        \--|--|--|--|-- b.n     <main+0x486>
-           |  |  |  |   blx     <__cxa_end_catch@plt>
-           |  |  |  +-- b.n     <main+0x5f8>
+    17dc:       bl      f70 <__cxa_end_catch@plt>
+    17e0:       b       1614 <main+0x4dc>
+    17e4:       mov     x19, x0
+    17e8:       bl      f70 <__cxa_end_catch@plt>
+    17ec:       b       17f4 <main+0x6bc>
 std::string food = "Pizza";  // food variable
-           |  |  |  \-> add.w   r3, r7, #28
-           |  |  |      mov     r0, r3
-           |  |  |      blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-           |  |  +----- b.n     <main+0x604>
+    17f0:       mov     x19, x0
+    17f4:       add     x0, sp, #0x68
+    17f8:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    17fc:       mov     x20, x19
+    1800:       b       1808 <main+0x6d0>
 std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
-           |  |  \----> add.w   r4, r7, #60     ; 0x3c
-           |  |         adds    r4, #96 ; 0x60
-           |  |     /-> add.w   r3, r7, #60     ; 0x3c
-           |  |     |   cmp     r4, r3
-           |  +-----|-- beq.n   <main+0x61c>
-           |  |     |   subs    r4, #24
-           |  |     |   mov     r0, r4
-           |  |     |   blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-           |  |     \-- b.n     <main+0x60a>
+    1804:       mov     x20, x0
+    1808:       add     x19, sp, #0x90
+    180c:       add     x19, x19, #0x80
+    1810:       add     x0, sp, #0x90
+    1814:       cmp     x19, x0
+    1818:       b.eq    182c <main+0x6f4>  // b.none
+    181c:       sub     x19, x19, #0x20
+    1820:       mov     x0, x19
+    1824:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    1828:       b       1810 <main+0x6d8>
+    182c:       mov     x19, x20
 std::string intro = "hello world"; //string
-           |  \-------> add.w   r3, r7, #156    ; 0x9c
-           |            mov     r0, r3
-           |            blx     <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
-           |            blx     <__cxa_end_cleanup@plt>
-           \----------> mov     r0, r3
-                        add.w   r7, r7, #280    ; 0x118
-                        mov     sp, r7
-                        ldmia.w sp!, {r4, r5, r6, r7, r8, pc}
-                        .word   0x66666666
-                        .word   0x40126666
-                        .word   0x0001140a
-                        .word   0x000007f6
-                        .word   0x000007d6
-                        .word   0x000007b0
-                        .word   0x00000786
-                        .word   0x00000760
-                        .word   0x00000708
-                        .word   0x0000007c
-                        .word   0x00000704
-                        .word   0x000006fe
-                        .word   0x000006e4
-                        .word   0x000006d4
-                        .word   0x000006b2
-                        .word   0x0000008c
-                        .word   0x00000600
-                        .word   0x0000060e
-                        .word   0x0000061c
-                        .word   0x0000062a
-                        .word   0x00000638
-                        .word   0x0000057c
-                        .word   0x0000054e
-                        .word   0x00000508
-                        .word   0x000004e0
-                        .word   0x0000053c
-                        .word   0x0000047e
-                        .word   0x000004f8
-                        .word   0x00000070
-                        .word   0xfffffb35
-                        .word   0xfffffb25
-                        .word   0xfffffb15
-                        .word   0xfffffb05
-                        .word   0x000003b8
-                        .word   0x000003dc
+    1830:       add     x0, sp, #0x110
+    1834:       bl      ec0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    1838:       mov     x0, x19
+    183c:       bl      fb0 <_Unwind_Resume@plt>
+    1840:       ldp     x19, x20, [sp, #16]
+    1844:       ldr     x21, [sp, #32]
+    1848:       ldp     x29, x30, [sp], #448
+    184c:       ret
 
-<_Z41__static_initialization_and_destruction_0ii>:
-            push        {r4, r7, lr}
-            sub sp, #12
-            add r7, sp, #0
-            str r0, [r7, #4]
-            str r1, [r7, #0]
-            ldr r4, [pc, #60]   ; (<_Z41__static_initialization_and_destruction_0ii+0x48>)
-            add r4, pc
-            ldr r3, [r7, #4]
-            cmp r3, #1
-        /-- bne.n       <_Z41__static_initialization_and_destruction_0ii+0x3e>
-        |   ldr r3, [r7, #0]
-        |   movw        r2, #65535      ; 0xffff
-        |   cmp r3, r2
-        +-- bne.n       <_Z41__static_initialization_and_destruction_0ii+0x3e>
+0000000000001850 <_Z41__static_initialization_and_destruction_0ii>:
+    1850:       stp     x29, x30, [sp, #-32]!
+    1854:       mov     x29, sp
+    1858:       str     w0, [sp, #28]
+    185c:       str     w1, [sp, #24]
+    1860:       ldr     w0, [sp, #28]
+    1864:       cmp     w0, #0x1
+    1868:       b.ne    18a4 <_Z41__static_initialization_and_destruction_0ii+0x54>  // b.any
+    186c:       ldr     w1, [sp, #24]
+    1870:       mov     w0, #0xffff                     // #65535
+    1874:       cmp     w1, w0
+    1878:       b.ne    18a4 <_Z41__static_initialization_and_destruction_0ii+0x54>  // b.any
   extern wostream wclog;        /// Linked to standard error (buffered)
 #endif
   //@}
 
   // For construction of filebuffers for cout, cin, cerr, clog et. al.
   static ios_base::Init __ioinit;
-        |   ldr r3, [pc, #44]   ; (<_Z41__static_initialization_and_destruction_0ii+0x4c>)
-        |   add r3, pc
-        |   mov r0, r3
-        |   blx <_ZNSt8ios_base4InitC1Ev@plt>
-        |   ldr r3, [pc, #36]   ; (<_Z41__static_initialization_and_destruction_0ii+0x50>)
-        |   add r3, pc
-        |   mov r2, r3
-        |   ldr r3, [pc, #36]   ; (<_Z41__static_initialization_and_destruction_0ii+0x54>)
-        |   ldr r3, [r4, r3]
-        |   mov r1, r3
-        |   ldr r3, [pc, #32]   ; (<_Z41__static_initialization_and_destruction_0ii+0x58>)
-        |   add r3, pc
-        |   mov r0, r3
-        |   blx <__aeabi_atexit@plt>
-        \-> nop
-            adds        r7, #12
-            mov sp, r7
-            pop {r4, r7, pc}
-            nop
-            .word       0x00010d5c
-            .word       0x00010df4
-            .word       0x00010de2
-            .word       0x0000009c
-            .word       0x00010dde
+    187c:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    1880:       add     x0, x0, #0xf0
+    1884:       bl      f50 <_ZNSt8ios_base4InitC1Ev@plt>
+    1888:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    188c:       add     x2, x0, #0xd0
+    1890:       adrp    x0, 13000 <puts@GLIBC_2.17>
+    1894:       add     x1, x0, #0xf0
+    1898:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    189c:       ldr     x0, [x0, #4064]
+    18a0:       bl      f20 <__cxa_atexit@plt>
+    18a4:       nop
+    18a8:       ldp     x29, x30, [sp], #32
+    18ac:       ret
 
-<_GLOBAL__sub_I__Z14multi_functionPv>:
-        push    {r7, lr}
-        add     r7, sp, #0
-        movw    r1, #65535      ; 0xffff
-        movs    r0, #1
-        bl      <_Z41__static_initialization_and_destruction_0ii>
-        pop     {r7, pc}
+00000000000018b0 <_GLOBAL__sub_I__Z14multi_functionPv>:
+    18b0:       stp     x29, x30, [sp, #-16]!
+    18b4:       mov     x29, sp
+    18b8:       mov     w1, #0xffff                     // #65535
+    18bc:       mov     w0, #0x1                        // #1
+    18c0:       bl      1850 <_Z41__static_initialization_and_destruction_0ii>
+    18c4:       ldp     x29, x30, [sp], #16
+    18c8:       ret
 
-<_ZN13name_of_class15member_functionEv>:
-static void member_function() { //static member function
-        push    {r7}
-        add     r7, sp, #0
+00000000000018cc <_ZN13name_of_class15member_functionEv>:
 };
-        nop
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
+    18cc:       nop
+    18d0:       ret
 
-<_ZN13name_of_class12my_function2Ev>:
+00000000000018d4 <_ZN13name_of_class12my_function2Ev>:
 virtual void my_function2() {
-        push    {r7}
-        sub     sp, #12
-        add     r7, sp, #0
-        str     r0, [r7, #4]
+    18d4:       sub     sp, sp, #0x10
+    18d8:       str     x0, [sp, #8]
 };
-        nop
-        adds    r7, #12
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
-        ...
+    18dc:       nop
+    18e0:       add     sp, sp, #0x10
+    18e4:       ret
 
-<_ZN13name_of_classC1Ev>:
+00000000000018e8 <_ZN13name_of_classC1Ev>:
 class name_of_class {
-        push    {r7}
-        sub     sp, #12
-        add     r7, sp, #0
-        str     r0, [r7, #4]
-        ldr     r2, [pc, #32]   ; (<_ZN13name_of_classC1Ev+0x2c>)
-        add     r2, pc
-        ldr     r3, [pc, #32]   ; (<_ZN13name_of_classC1Ev+0x30>)
-        ldr     r3, [r2, r3]
-        add.w   r2, r3, #8
-        ldr     r3, [r7, #4]
-        str     r2, [r3, #0]
-        ldr     r3, [r7, #4]
-        movs    r2, #10
-        str     r2, [r3, #8]
-        ldr     r3, [r7, #4]
-        mov     r0, r3
-        adds    r7, #12
-        mov     sp, r7
-        ldr.w   r7, [sp], #4
-        bx      lr
-        .word   0x00010cce
-        .word   0x00000078
+    18e8:       sub     sp, sp, #0x10
+    18ec:       str     x0, [sp, #8]
+    18f0:       adrp    x0, 12000 <__FRAME_END__+0x10250>
+    18f4:       add     x1, x0, #0xd60
+    18f8:       ldr     x0, [sp, #8]
+    18fc:       str     x1, [x0]
+    1900:       ldr     x0, [sp, #8]
+    1904:       mov     w1, #0xa                        // #10
+    1908:       str     w1, [x0, #12]
+    190c:       nop
+    1910:       add     sp, sp, #0x10
+    1914:       ret
+    1918:       nop
+    191c:       nop
 
-<__libc_csu_init>:
-               stmdb    sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
-               mov      r7, r0
-               ldr      r6, [pc, #48]   ; (<__libc_csu_init+0x38>)
-               ldr      r5, [pc, #48]   ; (<__libc_csu_init+0x3c>)
-               mov      r8, r1
-               add      r6, pc
-               mov      r9, r2
-               add      r5, pc
-               blx      <_init>
-               subs     r6, r6, r5
-               asrs     r6, r6, #2
-        /----- beq.n    <__libc_csu_init+0x32>
-        |      subs     r5, #4
-        |      movs     r4, #0
-        |  /-> ldr.w    r3, [r5, #4]!
-        |  |   mov      r2, r9
-        |  |   mov      r1, r8
-        |  |   mov      r0, r7
-        |  |   adds     r4, #1
-        |  |   blx      r3
-        |  |   cmp      r6, r4
-        |  \-- bne.n    <__libc_csu_init+0x20>
-        \----> ldmia.w  sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
-               nop
-               .word    0x00010b80
-               .word    0x00010b74
+0000000000001920 <__libc_csu_init>:
+    1920:       stp     x29, x30, [sp, #-64]!
+    1924:       mov     x29, sp
+    1928:       stp     x19, x20, [sp, #16]
+    192c:       adrp    x20, 12000 <__FRAME_END__+0x10250>
+    1930:       add     x20, x20, #0xd48
+    1934:       stp     x21, x22, [sp, #32]
+    1938:       adrp    x21, 12000 <__FRAME_END__+0x10250>
+    193c:       add     x21, x21, #0xd38
+    1940:       sub     x20, x20, x21
+    1944:       mov     w22, w0
+    1948:       stp     x23, x24, [sp, #48]
+    194c:       mov     x23, x1
+    1950:       mov     x24, x2
+    1954:       asr     x20, x20, #3
+    1958:       bl      e20 <_init>
+    195c:       cbz     x20, 1988 <__libc_csu_init+0x68>
+    1960:       mov     x19, #0x0                       // #0
+    1964:       nop
+    1968:       ldr     x3, [x21, x19, lsl #3]
+    196c:       mov     x2, x24
+    1970:       add     x19, x19, #0x1
+    1974:       mov     x1, x23
+    1978:       mov     w0, w22
+    197c:       blr     x3
+    1980:       cmp     x20, x19
+    1984:       b.ne    1968 <__libc_csu_init+0x48>  // b.any
+    1988:       ldp     x19, x20, [sp, #16]
+    198c:       ldp     x21, x22, [sp, #32]
+    1990:       ldp     x23, x24, [sp, #48]
+    1994:       ldp     x29, x30, [sp], #64
+    1998:       ret
+    199c:       nop
 
-<__libc_csu_fini>:
-        bx      lr
-        nop
+00000000000019a0 <__libc_csu_fini>:
+    19a0:       ret
 
 Disassembly of section .fini:
 
-<_fini>:
-        push    {r3, lr}
-        pop     {r3, pc}
-                            
+00000000000019a4 <_fini>:
+    19a4:       stp     x29, x30, [sp, #-16]!
+    19a8:       mov     x29, sp
+    19ac:       ldp     x29, x30, [sp], #16
+    19b0:       ret
