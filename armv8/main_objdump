@@ -1,0 +1,1271 @@
+main:     file format elf32-littlearm
+
+
+Disassembly of section .init:
+
+0000093c <_init>:
+ 93c:   e92d4008        push    {r3, lr}
+ 940:   eb000062        bl      ad0 <call_weak_fn>
+ 944:   e8bd8008        pop     {r3, pc}
+
+Disassembly of section .plt:
+
+00000948 <.plt>:
+ 948:   e52de004        push    {lr}            ; (str lr, [sp, #-4]!)
+ 94c:   e59fe004        ldr     lr, [pc, #4]    ; 958 <.plt+0x10>
+ 950:   e08fe00e        add     lr, pc, lr
+ 954:   e5bef008        ldr     pc, [lr, #8]!
+ 958:   000116a8        .word   0x000116a8
+
+0000095c <__aeabi_atexit@plt>:
+ 95c:   e28fc600        add     ip, pc, #0, 12
+ 960:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 964:   e5bcf6a8        ldr     pc, [ip, #1704]!        ; 0x6a8
+
+00000968 <__cxa_begin_catch@plt>:
+ 968:   e28fc600        add     ip, pc, #0, 12
+ 96c:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 970:   e5bcf6a0        ldr     pc, [ip, #1696]!        ; 0x6a0
+
+00000974 <pthread_join@plt>:
+ 974:   e28fc600        add     ip, pc, #0, 12
+ 978:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 97c:   e5bcf698        ldr     pc, [ip, #1688]!        ; 0x698
+
+00000980 <__cxa_allocate_exception@plt>:
+ 980:   e28fc600        add     ip, pc, #0, 12
+ 984:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 988:   e5bcf690        ldr     pc, [ip, #1680]!        ; 0x690
+
+0000098c <printf@plt>:
+ 98c:   e28fc600        add     ip, pc, #0, 12
+ 990:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 994:   e5bcf688        ldr     pc, [ip, #1672]!        ; 0x688
+
+00000998 <puts@plt>:
+ 998:   e28fc600        add     ip, pc, #0, 12
+ 99c:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9a0:   e5bcf680        ldr     pc, [ip, #1664]!        ; 0x680
+
+000009a4 <_ZNSirsERi@plt>:
+ 9a4:   e28fc600        add     ip, pc, #0, 12
+ 9a8:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9ac:   e5bcf678        ldr     pc, [ip, #1656]!        ; 0x678
+
+000009b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>:
+ 9b0:   e28fc600        add     ip, pc, #0, 12
+ 9b4:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9b8:   e5bcf670        ldr     pc, [ip, #1648]!        ; 0x670
+
+000009bc <_ZNSolsEPKv@plt>:
+ 9bc:   e28fc600        add     ip, pc, #0, 12
+ 9c0:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9c4:   e5bcf668        ldr     pc, [ip, #1640]!        ; 0x668
+
+000009c8 <abort@plt>:
+ 9c8:   e28fc600        add     ip, pc, #0, 12
+ 9cc:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9d0:   e5bcf660        ldr     pc, [ip, #1632]!        ; 0x660
+
+000009d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
+ 9d4:   e28fc600        add     ip, pc, #0, 12
+ 9d8:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9dc:   e5bcf658        ldr     pc, [ip, #1624]!        ; 0x658
+
+000009e0 <_ZNSaIcED1Ev@plt>:
+ 9e0:   e28fc600        add     ip, pc, #0, 12
+ 9e4:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9e8:   e5bcf650        ldr     pc, [ip, #1616]!        ; 0x650
+
+000009ec <__cxa_end_cleanup@plt>:
+ 9ec:   e28fc600        add     ip, pc, #0, 12
+ 9f0:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ 9f4:   e5bcf648        ldr     pc, [ip, #1608]!        ; 0x648
+
+000009f8 <__isoc99_scanf@plt>:
+ 9f8:   e28fc600        add     ip, pc, #0, 12
+ 9fc:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a00:   e5bcf640        ldr     pc, [ip, #1600]!        ; 0x640
+
+00000a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>:
+ a04:   e28fc600        add     ip, pc, #0, 12
+ a08:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a0c:   e5bcf638        ldr     pc, [ip, #1592]!        ; 0x638
+
+00000a10 <_ZNSt8ios_base4InitC1Ev@plt>:
+ a10:   e28fc600        add     ip, pc, #0, 12
+ a14:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a18:   e5bcf630        ldr     pc, [ip, #1584]!        ; 0x630
+
+00000a1c <__cxa_end_catch@plt>:
+ a1c:   e28fc600        add     ip, pc, #0, 12
+ a20:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a24:   e5bcf628        ldr     pc, [ip, #1576]!        ; 0x628
+
+00000a28 <__gxx_personality_v0@plt>:
+ a28:   e28fc600        add     ip, pc, #0, 12
+ a2c:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a30:   e5bcf620        ldr     pc, [ip, #1568]!        ; 0x620
+
+00000a34 <pthread_create@plt>:
+ a34:   e28fc600        add     ip, pc, #0, 12
+ a38:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a3c:   e5bcf618        ldr     pc, [ip, #1560]!        ; 0x618
+
+00000a40 <__cxa_throw@plt>:
+ a40:   e28fc600        add     ip, pc, #0, 12
+ a44:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a48:   e5bcf610        ldr     pc, [ip, #1552]!        ; 0x610
+
+00000a4c <_ZNSolsEi@plt>:
+ a4c:   e28fc600        add     ip, pc, #0, 12
+ a50:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a54:   e5bcf608        ldr     pc, [ip, #1544]!        ; 0x608
+
+00000a58 <_ZNSaIcEC1Ev@plt>:
+ a58:   e28fc600        add     ip, pc, #0, 12
+ a5c:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a60:   e5bcf600        ldr     pc, [ip, #1536]!        ; 0x600
+
+00000a64 <__libc_start_main@plt>:
+ a64:   e28fc600        add     ip, pc, #0, 12
+ a68:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a6c:   e5bcf5f8        ldr     pc, [ip, #1528]!        ; 0x5f8
+
+00000a70 <__gmon_start__@plt>:
+ a70:   e28fc600        add     ip, pc, #0, 12
+ a74:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a78:   e5bcf5f0        ldr     pc, [ip, #1520]!        ; 0x5f0
+
+00000a7c <__cxa_finalize@plt>:
+ a7c:   e28fc600        add     ip, pc, #0, 12
+ a80:   e28cca11        add     ip, ip, #69632  ; 0x11000
+ a84:   e5bcf5e8        ldr     pc, [ip, #1512]!        ; 0x5e8
+
+Disassembly of section .text:
+
+00000a88 <_start>:
+     a88:       f04f 0b00       mov.w   fp, #0
+     a8c:       f04f 0e00       mov.w   lr, #0
+     a90:       bc02            pop     {r1}
+     a92:       466a            mov     r2, sp
+     a94:       b404            push    {r2}
+     a96:       b401            push    {r0}
+     a98:       f8df a024       ldr.w   sl, [pc, #36]   ; ac0 <_start+0x38>
+     a9c:       a308            add     r3, pc, #32     ; (adr r3, ac0 <_start+0x38>)
+     a9e:       449a            add     sl, r3
+     aa0:       f8df c020       ldr.w   ip, [pc, #32]   ; ac4 <_start+0x3c>
+     aa4:       f85a c00c       ldr.w   ip, [sl, ip]
+     aa8:       f84d cd04       str.w   ip, [sp, #-4]!
+     aac:       4b06            ldr     r3, [pc, #24]   ; (ac8 <_start+0x40>)
+     aae:       f85a 3003       ldr.w   r3, [sl, r3]
+     ab2:       4806            ldr     r0, [pc, #24]   ; (acc <_start+0x44>)
+     ab4:       f85a 0000       ldr.w   r0, [sl, r0]
+     ab8:       f7ff efd4       blx     a64 <__libc_start_main@plt>
+     abc:       f7ff ef84       blx     9c8 <abort@plt>
+     ac0:       00011540        .word   0x00011540
+     ac4:       00000088        .word   0x00000088
+     ac8:       00000080        .word   0x00000080
+     acc:       00000074        .word   0x00000074
+
+00000ad0 <call_weak_fn>:
+     ad0:       e59f3014        ldr     r3, [pc, #20]   ; aec <call_weak_fn+0x1c>
+     ad4:       e59f2014        ldr     r2, [pc, #20]   ; af0 <call_weak_fn+0x20>
+     ad8:       e08f3003        add     r3, pc, r3
+     adc:       e7932002        ldr     r2, [r3, r2]
+     ae0:       e3520000        cmp     r2, #0
+     ae4:       012fff1e        bxeq    lr
+     ae8:       eaffffe0        b       a70 <__gmon_start__@plt>
+     aec:       00011520        .word   0x00011520
+     af0:       00000090        .word   0x00000090
+
+00000af4 <deregister_tm_clones>:
+     af4:           4806        ldr     r0, [pc, #24]   ; (b10 <deregister_tm_clones+0x1c>)
+     af6:           4b07        ldr     r3, [pc, #28]   ; (b14 <deregister_tm_clones+0x20>)
+     af8:           4a07        ldr     r2, [pc, #28]   ; (b18 <deregister_tm_clones+0x24>)
+     afa:           4478        add     r0, pc
+     afc:           447b        add     r3, pc
+     afe:           447a        add     r2, pc
+     b00:           4283        cmp     r3, r0
+     b02:       /-- d003        beq.n   b0c <deregister_tm_clones+0x18>
+     b04:       |   4b05        ldr     r3, [pc, #20]   ; (b1c <deregister_tm_clones+0x28>)
+     b06:       |   58d3        ldr     r3, [r2, r3]
+     b08:       +-- b103        cbz     r3, b0c <deregister_tm_clones+0x18>
+     b0a:       |   4718        bx      r3
+     b0c:       \-> 4770        bx      lr
+     b0e:           bf00        nop
+     b10:           000115aa    .word   0x000115aa
+     b14:           000115a8    .word   0x000115a8
+     b18:           000114fe    .word   0x000114fe
+     b1c:           00000084    .word   0x00000084
+
+00000b20 <register_tm_clones>:
+     b20:           4808        ldr     r0, [pc, #32]   ; (b44 <register_tm_clones+0x24>)
+     b22:           4909        ldr     r1, [pc, #36]   ; (b48 <register_tm_clones+0x28>)
+     b24:           4478        add     r0, pc
+     b26:           4a09        ldr     r2, [pc, #36]   ; (b4c <register_tm_clones+0x2c>)
+     b28:           4479        add     r1, pc
+     b2a:           1a09        subs    r1, r1, r0
+     b2c:           447a        add     r2, pc
+     b2e:           0fcb        lsrs    r3, r1, #31
+     b30:           eb03 01a1   add.w   r1, r3, r1, asr #2
+     b34:           1049        asrs    r1, r1, #1
+     b36:       /-- d003        beq.n   b40 <register_tm_clones+0x20>
+     b38:       |   4b05        ldr     r3, [pc, #20]   ; (b50 <register_tm_clones+0x30>)
+     b3a:       |   58d3        ldr     r3, [r2, r3]
+     b3c:       +-- b103        cbz     r3, b40 <register_tm_clones+0x20>
+     b3e:       |   4718        bx      r3
+     b40:       \-> 4770        bx      lr
+     b42:           bf00        nop
+     b44:           00011580    .word   0x00011580
+     b48:           0001157c    .word   0x0001157c
+     b4c:           000114d0    .word   0x000114d0
+     b50:           00000094    .word   0x00000094
+
+00000b54 <__do_global_dtors_aux>:
+     b54:              b508             push    {r3, lr}
+     b56:              4b0a             ldr     r3, [pc, #40]   ; (b80 <__do_global_dtors_aux+0x2c>)
+     b58:              4a0a             ldr     r2, [pc, #40]   ; (b84 <__do_global_dtors_aux+0x30>)
+     b5a:              447b             add     r3, pc
+     b5c:              447a             add     r2, pc
+     b5e:              781b             ldrb    r3, [r3, #0]
+     b60:       /----- b96b             cbnz    r3, b7e <__do_global_dtors_aux+0x2a>
+     b62:       |      4b09             ldr     r3, [pc, #36]   ; (b88 <__do_global_dtors_aux+0x34>)
+     b64:       |      58d3             ldr     r3, [r2, r3]
+     b66:       |  /-- b123             cbz     r3, b72 <__do_global_dtors_aux+0x1e>
+     b68:       |  |   4b08             ldr     r3, [pc, #32]   ; (b8c <__do_global_dtors_aux+0x38>)
+     b6a:       |  |   447b             add     r3, pc
+     b6c:       |  |   6818             ldr     r0, [r3, #0]
+     b6e:       |  |   f7ff ef86        blx     a7c <__cxa_finalize@plt>
+     b72:       |  \-> f7ff ffbf        bl      af4 <deregister_tm_clones>
+     b76:       |      4b06             ldr     r3, [pc, #24]   ; (b90 <__do_global_dtors_aux+0x3c>)
+     b78:       |      2201             movs    r2, #1
+     b7a:       |      447b             add     r3, pc
+     b7c:       |      701a             strb    r2, [r3, #0]
+     b7e:       \----> bd08             pop     {r3, pc}
+     b80:              0001154a         .word   0x0001154a
+     b84:              000114a0         .word   0x000114a0
+     b88:              00000098         .word   0x00000098
+     b8c:              00011536         .word   0x00011536
+     b90:              0001152a         .word   0x0001152a
+
+00000b94 <frame_dummy>:
+     b94:       e7c4            b.n     b20 <register_tm_clones>
+     b96:       bf00            nop
+
+00000b98 <_Z14multi_functionPv>:
+};
+
+
+
+
+void *multi_function(void *arg) { //dummy function setup for pthread
+     b98:       b480            push    {r7}
+     b9a:       b083            sub     sp, #12
+     b9c:       af00            add     r7, sp, #0
+     b9e:       6078            str     r0, [r7, #4]
+    //code
+};
+     ba0:       bf00            nop
+     ba2:       4618            mov     r0, r3
+     ba4:       370c            adds    r7, #12
+     ba6:       46bd            mov     sp, r7
+     ba8:       f85d 7b04       ldr.w   r7, [sp], #4
+     bac:       4770            bx      lr
+
+00000bae <_Z11my_functionv>:
+
+void my_function() { //dummy function
+     bae:       b480            push    {r7}
+     bb0:       af00            add     r7, sp, #0
+        //code
+};
+     bb2:       bf00            nop
+     bb4:       46bd            mov     sp, r7
+     bb6:       f85d 7b04       ldr.w   r7, [sp], #4
+     bba:       4770            bx      lr
+
+00000bbc <_Z19Function_Parametersii>:
+
+void Function_Parameters(int y, int h){ //dummy function
+     bbc:       b480            push    {r7}
+     bbe:       b083            sub     sp, #12
+     bc0:       af00            add     r7, sp, #0
+     bc2:       6078            str     r0, [r7, #4]
+     bc4:       6039            str     r1, [r7, #0]
+    //code
+};
+     bc6:       bf00            nop
+     bc8:       370c            adds    r7, #12
+     bca:       46bd            mov     sp, r7
+     bcc:       f85d 7b04       ldr.w   r7, [sp], #4
+     bd0:       4770            bx      lr
+
+00000bd2 <main>:
+
+
+
+
+int main (int argc, char **argv) //main function, this is absolutly nessecary
+{ // argc and argv allow comandline options to be passed
+     bd2:                       e92d 41f0       stmdb   sp!, {r4, r5, r6, r7, r8, lr}
+     bd6:                       b0c6            sub     sp, #280        ; 0x118
+     bd8:                       af00            add     r7, sp, #0
+     bda:                       f507 738c       add.w   r3, r7, #280    ; 0x118
+     bde:                       f5a3 738a       sub.w   r3, r3, #276    ; 0x114
+     be2:                       6018            str     r0, [r3, #0]
+     be4:                       f507 738c       add.w   r3, r7, #280    ; 0x118
+     be8:                       f5a3 738c       sub.w   r3, r3, #280    ; 0x118
+     bec:                       6019            str     r1, [r3, #0]
+     bee:                       f8df 4620       ldr.w   r4, [pc, #1568] ; 1210 <main+0x63e>
+     bf2:                       447c            add     r4, pc
+
+//creating an object
+name_of_class name_of_object;
+     bf4:                       f107 03b8       add.w   r3, r7, #184    ; 0xb8
+     bf8:                       4618            mov     r0, r3
+     bfa:                       f000 fb93       bl      1324 <_ZN13name_of_classC1Ev>
+
+//calling a method
+name_of_object.member_function;
+
+//calling functions
+my_function();
+     bfe:                       f7ff ffd6       bl      bae <_Z11my_functionv>
+
+//calling a function with parameters
+Function_Parameters(1,2);
+     c02:                       2102            movs    r1, #2
+     c04:                       2001            movs    r0, #1
+     c06:                       f7ff ffd9       bl      bbc <_Z19Function_Parametersii>
+
+//calling member functions
+name_of_class::member_function();
+     c0a:                       f000 fb79       bl      1300 <_ZN13name_of_class15member_functionEv>
+//calling int main(); can cause a memory leak!
+
+
+//varaibles and data types
+//dont use letters like me
+int x = 50; //interger
+     c0e:                       2332            movs    r3, #50 ; 0x32
+     c10:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+double q = 4.6; //float
+     c14:                       f20f 53f0       addw    r3, pc, #1520   ; 0x5f0
+     c18:                       e9d3 2300       ldrd    r2, r3, [r3]
+     c1c:                       e9c7 2340       strd    r2, r3, [r7, #256]      ; 0x100
+float b = 1.1; //float
+     c20:                       f64c 43cd       movw    r3, #52429      ; 0xcccd
+     c24:                       f6c3 738c       movt    r3, #16268      ; 0x3f8c
+     c28:                       f8c7 30fc       str.w   r3, [r7, #252]  ; 0xfc
+bool sky_is_blue = true; //true or false
+     c2c:                       2301            movs    r3, #1
+     c2e:                       f887 30fb       strb.w  r3, [r7, #251]  ; 0xfb
+char d = 'F'; //character
+     c32:                       2346            movs    r3, #70 ; 0x46
+     c34:                       f887 30fa       strb.w  r3, [r7, #250]  ; 0xfa
+std::string intro = "hello world"; //string
+     c38:                       f107 03c4       add.w   r3, r7, #196    ; 0xc4
+     c3c:                       4618            mov     r0, r3
+     c3e:                       f7ff ef0c       blx     a58 <_ZNSaIcEC1Ev@plt>
+     c42:                       f107 02c4       add.w   r2, r7, #196    ; 0xc4
+     c46:                       f107 039c       add.w   r3, r7, #156    ; 0x9c
+     c4a:                       f8df 15c8       ldr.w   r1, [pc, #1480] ; 1214 <main+0x642>
+     c4e:                       4479            add     r1, pc
+     c50:                       4618            mov     r0, r3
+     c52:                       f7ff eed8       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+     c56:                       f107 03c4       add.w   r3, r7, #196    ; 0xc4
+     c5a:                       4618            mov     r0, r3
+     c5c:                       f7ff eec0       blx     9e0 <_ZNSaIcED1Ev@plt>
+std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
+     c60:                       f107 063c       add.w   r6, r7, #60     ; 0x3c
+     c64:                       2503            movs    r5, #3
+     c66:                       f107 03c8       add.w   r3, r7, #200    ; 0xc8
+     c6a:                       4618            mov     r0, r3
+     c6c:                       f7ff eef4       blx     a58 <_ZNSaIcEC1Ev@plt>
+     c70:                       f107 03c8       add.w   r3, r7, #200    ; 0xc8
+     c74:                       461a            mov     r2, r3
+     c76:                       f8df 35a0       ldr.w   r3, [pc, #1440] ; 1218 <main+0x646>
+     c7a:                       447b            add     r3, pc
+     c7c:                       4619            mov     r1, r3
+     c7e:                       4630            mov     r0, r6
+     c80:                       f7ff eec0       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+#if __cpp_deduction_guides && ! defined _GLIBCXX_DEFINING_STRING_INSTANTIATIONS
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 3076. basic_string CTAD ambiguity
+      template<typename = _RequireAllocator<_Alloc>>
+#endif
+      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+     c84:                       f107 03c8       add.w   r3, r7, #200    ; 0xc8
+     c88:                       4618            mov     r0, r3
+     c8a:                       f7ff eeaa       blx     9e0 <_ZNSaIcED1Ev@plt>
+     c8e:                       f106 0818       add.w   r8, r6, #24
+     c92:                       3d01            subs    r5, #1
+     c94:                       f107 03cc       add.w   r3, r7, #204    ; 0xcc
+     c98:                       4618            mov     r0, r3
+     c9a:                       f7ff eede       blx     a58 <_ZNSaIcEC1Ev@plt>
+     c9e:                       f107 03cc       add.w   r3, r7, #204    ; 0xcc
+     ca2:                       461a            mov     r2, r3
+     ca4:                       f8df 3574       ldr.w   r3, [pc, #1396] ; 121c <main+0x64a>
+     ca8:                       447b            add     r3, pc
+     caa:                       4619            mov     r1, r3
+     cac:                       4640            mov     r0, r8
+     cae:                       f7ff eeaa       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+     cb2:                       f107 03cc       add.w   r3, r7, #204    ; 0xcc
+     cb6:                       4618            mov     r0, r3
+     cb8:                       f7ff ee92       blx     9e0 <_ZNSaIcED1Ev@plt>
+     cbc:                       f108 0818       add.w   r8, r8, #24
+     cc0:                       3d01            subs    r5, #1
+     cc2:                       f107 03d0       add.w   r3, r7, #208    ; 0xd0
+     cc6:                       4618            mov     r0, r3
+     cc8:                       f7ff eec6       blx     a58 <_ZNSaIcEC1Ev@plt>
+     ccc:                       f107 03d0       add.w   r3, r7, #208    ; 0xd0
+     cd0:                       461a            mov     r2, r3
+     cd2:                       f8df 354c       ldr.w   r3, [pc, #1356] ; 1220 <main+0x64e>
+     cd6:                       447b            add     r3, pc
+     cd8:                       4619            mov     r1, r3
+     cda:                       4640            mov     r0, r8
+     cdc:                       f7ff ee92       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+     ce0:                       f107 03d0       add.w   r3, r7, #208    ; 0xd0
+     ce4:                       4618            mov     r0, r3
+     ce6:                       f7ff ee7c       blx     9e0 <_ZNSaIcED1Ev@plt>
+     cea:                       f108 0818       add.w   r8, r8, #24
+     cee:                       3d01            subs    r5, #1
+     cf0:                       f107 03d4       add.w   r3, r7, #212    ; 0xd4
+     cf4:                       4618            mov     r0, r3
+     cf6:                       f7ff eeb0       blx     a58 <_ZNSaIcEC1Ev@plt>
+     cfa:                       f107 03d4       add.w   r3, r7, #212    ; 0xd4
+     cfe:                       461a            mov     r2, r3
+     d00:                       f8df 3520       ldr.w   r3, [pc, #1312] ; 1224 <main+0x652>
+     d04:                       447b            add     r3, pc
+     d06:                       4619            mov     r1, r3
+     d08:                       4640            mov     r0, r8
+     d0a:                       f7ff ee7c       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+     d0e:                       f107 03d4       add.w   r3, r7, #212    ; 0xd4
+     d12:                       4618            mov     r0, r3
+     d14:                       f7ff ee64       blx     9e0 <_ZNSaIcED1Ev@plt>
+auto n = 36;
+     d18:                       2324            movs    r3, #36 ; 0x24
+     d1a:                       f8c7 30f4       str.w   r3, [r7, #244]  ; 0xf4
+volatile int y; //
+const int v = 100; //constant
+     d1e:                       2364            movs    r3, #100        ; 0x64
+     d20:                       f8c7 30f0       str.w   r3, [r7, #240]  ; 0xf0
+unsigned int o; //cant be negative
+signed r;
+long i;
+
+//increment operator
+++x; //not the same
+     d24:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d28:                       3301            adds    r3, #1
+     d2a:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+x++;
+     d2e:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d32:                       3301            adds    r3, #1
+     d34:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+//deincrement operator
+--x;
+     d38:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d3c:                       3b01            subs    r3, #1
+     d3e:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+x--;
+     d42:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d46:                       3b01            subs    r3, #1
+     d48:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+
+//sizeoff operator
+x = sizeof (char); //returns the size in bytes 
+     d4c:                       2301            movs    r3, #1
+     d4e:                       f8c7 30b4       str.w   r3, [r7, #180]  ; 0xb4
+!false;  // evaluates to true 
+
+volatile int g; //stop compiler optimization
+
+//logical NOT Operator
+!g;
+     d52:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+
+//bitwise NOT Operator
+~g;
+     d54:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+
+//bitwise shift Operator
+g >> 1;
+     d56:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+g << 1;
+     d58:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+
+//bitwise AND Operator
+g & 10;
+     d5a:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+
+//bitwise XOR Operator
+g ^ 10;
+     d5c:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+
+//bitwise OR Operator
+g | 10;
+     d5e:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+//(6 >= 6)     evaluates to true
+//(5 < 5)      evaluates to false 
+
+
+//print stuff
+std::cout << "Hello world\n";
+     d60:                       f8df 34c4       ldr.w   r3, [pc, #1220] ; 1228 <main+0x656>
+     d64:                       447b            add     r3, pc
+     d66:                       4619            mov     r1, r3
+     d68:                       f8df 34c0       ldr.w   r3, [pc, #1216] ; 122c <main+0x65a>
+     d6c:                       58e3            ldr     r3, [r4, r3]
+     d6e:                       4618            mov     r0, r3
+     d70:                       f7ff ee30       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+printf ("Hello world\n");
+     d74:                       f8df 34b8       ldr.w   r3, [pc, #1208] ; 1230 <main+0x65e>
+     d78:                       447b            add     r3, pc
+     d7a:                       4618            mov     r0, r3
+     d7c:                       f7ff ee0c       blx     998 <puts@plt>
+// "\n" makes a new line
+
+
+//printing varables
+printf ("%d", x); //%d is for an integer but %f would be for float or %s would be for a string
+     d80:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d84:                       4619            mov     r1, r3
+     d86:                       f8df 34ac       ldr.w   r3, [pc, #1196] ; 1234 <main+0x662>
+     d8a:                       447b            add     r3, pc
+     d8c:                       4618            mov     r0, r3
+     d8e:                       f7ff edfe       blx     98c <printf@plt>
+std::cout << x; // a simpler way
+     d92:                       f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     d96:                       4619            mov     r1, r3
+     d98:                       f8df 3490       ldr.w   r3, [pc, #1168] ; 122c <main+0x65a>
+     d9c:                       58e3            ldr     r3, [r4, r3]
+     d9e:                       4618            mov     r0, r3
+     da0:                       f7ff ee54       blx     a4c <_ZNSolsEi@plt>
+
+
+//starting a new line
+std::cout << "\n";
+     da4:                       f8df 3490       ldr.w   r3, [pc, #1168] ; 1238 <main+0x666>
+     da8:                       447b            add     r3, pc
+     daa:                       4619            mov     r1, r3
+     dac:                       f8df 347c       ldr.w   r3, [pc, #1148] ; 122c <main+0x65a>
+     db0:                       58e3            ldr     r3, [r4, r3]
+     db2:                       4618            mov     r0, r3
+     db4:                       f7ff ee0e       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+
+
+//input
+std::cout << "input any text: ";
+     db8:                       f8df 3480       ldr.w   r3, [pc, #1152] ; 123c <main+0x66a>
+     dbc:                       447b            add     r3, pc
+     dbe:                       4619            mov     r1, r3
+     dc0:                       f8df 3468       ldr.w   r3, [pc, #1128] ; 122c <main+0x65a>
+     dc4:                       58e3            ldr     r3, [r4, r3]
+     dc6:                       4618            mov     r0, r3
+     dc8:                       f7ff ee04       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+scanf ("%d", &x); //both take the input of x 
+     dcc:                       f107 03b4       add.w   r3, r7, #180    ; 0xb4
+     dd0:                       4619            mov     r1, r3
+     dd2:                       f8df 346c       ldr.w   r3, [pc, #1132] ; 1240 <main+0x66e>
+     dd6:                       447b            add     r3, pc
+     dd8:                       4618            mov     r0, r3
+     dda:                       f7ff ee0e       blx     9f8 <__isoc99_scanf@plt>
+std::cin >> x;
+     dde:                       f107 03b4       add.w   r3, r7, #180    ; 0xb4
+     de2:                       4619            mov     r1, r3
+     de4:                       f8df 345c       ldr.w   r3, [pc, #1116] ; 1244 <main+0x672>
+     de8:                       58e3            ldr     r3, [r4, r3]
+     dea:                       4618            mov     r0, r3
+     dec:                       f7ff edda       blx     9a4 <_ZNSirsERi@plt>
+
+
+//conditionals
+
+if (g == 10)
+     df0:                       6b7b            ldr     r3, [r7, #52]   ; 0x34
+     df2:                       2b0a            cmp     r3, #10
+     df4:                       bf0c            ite     eq
+     df6:                       2301            moveq   r3, #1
+     df8:                       2300            movne   r3, #0
+     dfa:                       b2db            uxtb    r3, r3
+     dfc:                       2b00            cmp     r3, #0
+     dfe:                   /-- d101            bne.n   e04 <main+0x232>
+{
+        //do stuff
+}
+else if (g == 20)
+     e00:                   |   6b7b            ldr     r3, [r7, #52]   ; 0x34
+     e02:                   |   2b14            cmp     r3, #20
+        //more stuff
+}
+
+
+//extremely powerful
+switch(x) {
+     e04:                   \-> f8d7 30b4       ldr.w   r3, [r7, #180]  ; 0xb4
+     e08:                       2b2d            cmp     r3, #45 ; 0x2d
+     e0a:                   /-- dc47            bgt.n   e9c <main+0x2ca>
+     e0c:                   |   2b0f            cmp     r3, #15
+     e0e:                /--|-- db62            blt.n   ed6 <main+0x304>
+     e10:                |  |   3b0f            subs    r3, #15
+     e12:                |  |   2b1e            cmp     r3, #30
+     e14:                +--|-- d85f            bhi.n   ed6 <main+0x304>
+     e16:                |  |   a202            add     r2, pc, #8      ; (adr r2, e20 <main+0x24e>)
+     e18:                |  |   f852 3023       ldr.w   r3, [r2, r3, lsl #2]
+     e1c:                |  |   441a            add     r2, r3
+     e1e:                |  |   4710            bx      r2
+     e20:                |  |   00000083        .word   0x00000083
+     e24:                |  |   000000b7        .word   0x000000b7
+     e28:                |  |   000000b7        .word   0x000000b7
+     e2c:                |  |   000000b7        .word   0x000000b7
+     e30:                |  |   000000b7        .word   0x000000b7
+     e34:                |  |   0000008d        .word   0x0000008d
+     e38:                |  |   000000b7        .word   0x000000b7
+     e3c:                |  |   000000b7        .word   0x000000b7
+     e40:                |  |   000000b7        .word   0x000000b7
+     e44:                |  |   000000b7        .word   0x000000b7
+     e48:                |  |   000000b7        .word   0x000000b7
+     e4c:                |  |   000000b7        .word   0x000000b7
+     e50:                |  |   000000b7        .word   0x000000b7
+     e54:                |  |   000000b7        .word   0x000000b7
+     e58:                |  |   000000b7        .word   0x000000b7
+     e5c:                |  |   000000b7        .word   0x000000b7
+     e60:                |  |   000000b7        .word   0x000000b7
+     e64:                |  |   000000b7        .word   0x000000b7
+     e68:                |  |   000000b7        .word   0x000000b7
+     e6c:                |  |   000000b7        .word   0x000000b7
+     e70:                |  |   00000097        .word   0x00000097
+     e74:                |  |   000000b7        .word   0x000000b7
+     e78:                |  |   000000b7        .word   0x000000b7
+     e7c:                |  |   000000b7        .word   0x000000b7
+     e80:                |  |   000000b7        .word   0x000000b7
+     e84:                |  |   000000b7        .word   0x000000b7
+     e88:                |  |   000000b7        .word   0x000000b7
+     e8c:                |  |   000000b7        .word   0x000000b7
+     e90:                |  |   000000b7        .word   0x000000b7
+     e94:                |  |   000000b7        .word   0x000000b7
+     e98:                |  |   000000a1        .word   0x000000a1
+     e9c:                |  \-> 2b40            cmp     r3, #64 ; 0x40
+     e9e:                |  /-- d014            beq.n   eca <main+0x2f8>
+     ea0:                +--|-- e019            b.n     ed6 <main+0x304>
+        case 15:
+                printf ("the value of x is 15");
+     ea2:                |  |   4be9            ldr     r3, [pc, #932]  ; (1248 <main+0x676>)
+     ea4:                |  |   447b            add     r3, pc
+     ea6:                |  |   4618            mov     r0, r3
+     ea8:                |  |   f7ff ed70       blx     98c <printf@plt>
+        case 20:
+                printf ("the value of x is 20");
+     eac:                |  |   4be7            ldr     r3, [pc, #924]  ; (124c <main+0x67a>)
+     eae:                |  |   447b            add     r3, pc
+     eb0:                |  |   4618            mov     r0, r3
+     eb2:                |  |   f7ff ed6c       blx     98c <printf@plt>
+        case 35:
+                printf ("the value of x is 35");
+     eb6:                |  |   4be6            ldr     r3, [pc, #920]  ; (1250 <main+0x67e>)
+     eb8:                |  |   447b            add     r3, pc
+     eba:                |  |   4618            mov     r0, r3
+     ebc:                |  |   f7ff ed66       blx     98c <printf@plt>
+        case 45:
+                printf ("the value of x is 45");
+     ec0:                |  |   4be4            ldr     r3, [pc, #912]  ; (1254 <main+0x682>)
+     ec2:                |  |   447b            add     r3, pc
+     ec4:                |  |   4618            mov     r0, r3
+     ec6:                |  |   f7ff ed62       blx     98c <printf@plt>
+        case 64:
+                printf ("the value of x is 64");
+     eca:                |  \-> 4be3            ldr     r3, [pc, #908]  ; (1258 <main+0x686>)
+     ecc:                |      447b            add     r3, pc
+     ece:                |      4618            mov     r0, r3
+     ed0:                |      f7ff ed5c       blx     98c <printf@plt>
+
+    //break out of somthing
+    break;
+     ed4:                |      bf00            nop
+//Conditional ternary operator
+7==5+2 ? 4 : 3;
+
+
+//Conditional loops
+int j = 0;
+     ed6:                \----> 2300            movs    r3, #0
+     ed8:                       f8c7 3114       str.w   r3, [r7, #276]  ; 0x114
+//while loop
+while (j<50){ //repeat until condition is met
+     edc:                /----> f8d7 3114       ldr.w   r3, [r7, #276]  ; 0x114
+     ee0:                |      2b31            cmp     r3, #49 ; 0x31
+     ee2:                |  /-- dc05            bgt.n   ef0 <main+0x31e>
+        //code
+j++;
+     ee4:                |  |   f8d7 3114       ldr.w   r3, [r7, #276]  ; 0x114
+     ee8:                |  |   3301            adds    r3, #1
+     eea:                |  |   f8c7 3114       str.w   r3, [r7, #276]  ; 0x114
+while (j<50){ //repeat until condition is met
+     eee:                \--|-- e7f5            b.n     edc <main+0x30a>
+}
+
+
+//for loop
+for (int i = 0; i < 5; i++) {
+     ef0:                   \-> 2300            movs    r3, #0
+     ef2:                       f8c7 3110       str.w   r3, [r7, #272]  ; 0x110
+     ef6:                /----> f8d7 3110       ldr.w   r3, [r7, #272]  ; 0x110
+     efa:                |      2b04            cmp     r3, #4
+     efc:                |  /-- dc13            bgt.n   f26 <main+0x354>
+        std::cout << i << "\n";
+     efe:                |  |   f8d7 1110       ldr.w   r1, [r7, #272]  ; 0x110
+     f02:                |  |   4bca            ldr     r3, [pc, #808]  ; (122c <main+0x65a>)
+     f04:                |  |   58e3            ldr     r3, [r4, r3]
+     f06:                |  |   4618            mov     r0, r3
+     f08:                |  |   f7ff eda0       blx     a4c <_ZNSolsEi@plt>
+     f0c:                |  |   4602            mov     r2, r0
+     f0e:                |  |   4bd3            ldr     r3, [pc, #844]  ; (125c <main+0x68a>)
+     f10:                |  |   447b            add     r3, pc
+     f12:                |  |   4619            mov     r1, r3
+     f14:                |  |   4610            mov     r0, r2
+     f16:                |  |   f7ff ed5e       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+for (int i = 0; i < 5; i++) {
+     f1a:                |  |   f8d7 3110       ldr.w   r3, [r7, #272]  ; 0x110
+     f1e:                |  |   3301            adds    r3, #1
+     f20:                |  |   f8c7 3110       str.w   r3, [r7, #272]  ; 0x110
+     f24:                \--|-- e7e7            b.n     ef6 <main+0x324>
+}
+
+
+//do while loop
+int z = 0;
+     f26:                   \-> 2300            movs    r3, #0
+     f28:                       f8c7 310c       str.w   r3, [r7, #268]  ; 0x10c
+do {
+  cout << z << "\n";
+     f2c:                /----> f8d7 110c       ldr.w   r1, [r7, #268]  ; 0x10c
+     f30:                |      4bbe            ldr     r3, [pc, #760]  ; (122c <main+0x65a>)
+     f32:                |      58e3            ldr     r3, [r4, r3]
+     f34:                |      4618            mov     r0, r3
+     f36:                |      f7ff ed8a       blx     a4c <_ZNSolsEi@plt>
+     f3a:                |      4602            mov     r2, r0
+     f3c:                |      4bc8            ldr     r3, [pc, #800]  ; (1260 <main+0x68e>)
+     f3e:                |      447b            add     r3, pc
+     f40:                |      4619            mov     r1, r3
+     f42:                |      4610            mov     r0, r2
+     f44:                |      f7ff ed46       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  z++;
+     f48:                |      f8d7 310c       ldr.w   r3, [r7, #268]  ; 0x10c
+     f4c:                |      3301            adds    r3, #1
+     f4e:                |      f8c7 310c       str.w   r3, [r7, #268]  ; 0x10c
+}
+while (z < 5);
+     f52:                |      f8d7 310c       ldr.w   r3, [r7, #268]  ; 0x10c
+     f56:                |      2b04            cmp     r3, #4
+     f58:                |  /-- dc00            bgt.n   f5c <main+0x38a>
+do {
+     f5a:                \--|-- e7e7            b.n     f2c <main+0x35a>
+
+
+//continue
+for (int m = 0; m < 10; m++) {
+     f5c:                   \-> 2300            movs    r3, #0
+     f5e:                       f8c7 3108       str.w   r3, [r7, #264]  ; 0x108
+     f62:          /----------> f8d7 3108       ldr.w   r3, [r7, #264]  ; 0x108
+     f66:          |            2b09            cmp     r3, #9
+     f68:          |  /-------- dc19            bgt.n   f9e <main+0x3cc>
+  if (m == 4) {
+     f6a:          |  |         f8d7 3108       ldr.w   r3, [r7, #264]  ; 0x108
+     f6e:          |  |         2b04            cmp     r3, #4
+     f70:          |  |  /----- d00e            beq.n   f90 <main+0x3be>
+    continue; //skips if m equials 4
+  }
+  cout << m << "\n";
+     f72:          |  |  |      f8d7 1108       ldr.w   r1, [r7, #264]  ; 0x108
+     f76:          |  |  |      4bad            ldr     r3, [pc, #692]  ; (122c <main+0x65a>)
+     f78:          |  |  |      58e3            ldr     r3, [r4, r3]
+     f7a:          |  |  |      4618            mov     r0, r3
+     f7c:          |  |  |      f7ff ed66       blx     a4c <_ZNSolsEi@plt>
+     f80:          |  |  |      4602            mov     r2, r0
+     f82:          |  |  |      4bb8            ldr     r3, [pc, #736]  ; (1264 <main+0x692>)
+     f84:          |  |  |      447b            add     r3, pc
+     f86:          |  |  |      4619            mov     r1, r3
+     f88:          |  |  |      4610            mov     r0, r2
+     f8a:          |  |  |      f7ff ed24       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+     f8e:          |  |  |  /-- e000            b.n     f92 <main+0x3c0>
+    continue; //skips if m equials 4
+     f90:          |  |  \--|-> bf00            nop
+for (int m = 0; m < 10; m++) {
+     f92:          |  |     \-> f8d7 3108       ldr.w   r3, [r7, #264]  ; 0x108
+     f96:          |  |         3301            adds    r3, #1
+     f98:          |  |         f8c7 3108       str.w   r3, [r7, #264]  ; 0x108
+     f9c:          \--|-------- e7e1            b.n     f62 <main+0x390>
+}
+
+
+//goto
+goto label;
+     f9e:             \-------> bf00            nop
+
+
+
+//address operator
+//"&" is put before a varabale or funtion to get the memeory address, example:
+printf ("%d", &x); //this prints the memory address of x, like: 0x401720
+     fa0:                       f107 03b4       add.w   r3, r7, #180    ; 0xb4
+     fa4:                       4619            mov     r1, r3
+     fa6:                       4bb0            ldr     r3, [pc, #704]  ; (1268 <main+0x696>)
+     fa8:                       447b            add     r3, pc
+     faa:                       4618            mov     r0, r3
+     fac:                       f7ff ecee       blx     98c <printf@plt>
+
+
+//pointers
+int* p = &x; //the p varable now holds the memory address of p
+     fb0:                       f107 03b4       add.w   r3, r7, #180    ; 0xb4
+     fb4:                       f8c7 30ec       str.w   r3, [r7, #236]  ; 0xec
+std::cout << p; //prints the memory address of p
+     fb8:                       f8d7 10ec       ldr.w   r1, [r7, #236]  ; 0xec
+     fbc:                       4b9b            ldr     r3, [pc, #620]  ; (122c <main+0x65a>)
+     fbe:                       58e3            ldr     r3, [r4, r3]
+     fc0:                       4618            mov     r0, r3
+     fc2:                       f7ff ecfc       blx     9bc <_ZNSolsEPKv@plt>
+//void pointer
+
+void* void_pointer;
+
+//NULL pointer
+int* null_pointer = NULL;
+     fc6:                       2300            movs    r3, #0
+     fc8:                       f8c7 30e8       str.w   r3, [r7, #232]  ; 0xe8
+
+//references
+std::string food = "Pizza";  // food variable
+     fcc:                       f107 03d8       add.w   r3, r7, #216    ; 0xd8
+     fd0:                       4618            mov     r0, r3
+     fd2:                       f7ff ed42       blx     a58 <_ZNSaIcEC1Ev@plt>
+     fd6:                       f107 02d8       add.w   r2, r7, #216    ; 0xd8
+     fda:                       f107 031c       add.w   r3, r7, #28
+     fde:                       49a3            ldr     r1, [pc, #652]  ; (126c <main+0x69a>)
+     fe0:                       4479            add     r1, pc
+     fe2:                       4618            mov     r0, r3
+     fe4:                       f7ff ed0e       blx     a04 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@plt>
+     fe8:                       f107 03d8       add.w   r3, r7, #216    ; 0xd8
+     fec:                       4618            mov     r0, r3
+     fee:                       f7ff ecf8       blx     9e0 <_ZNSaIcED1Ev@plt>
+std::string &meal = food;    // reference to food
+     ff2:                       f107 031c       add.w   r3, r7, #28
+     ff6:                       f8c7 30e4       str.w   r3, [r7, #228]  ; 0xe4
+
+//dereferencing pointers
+std::cout << *p; //instead of printing the memory address of p, this prints the value of p (25)
+     ffa:                       f8d7 30ec       ldr.w   r3, [r7, #236]  ; 0xec
+     ffe:                       681b            ldr     r3, [r3, #0]
+    1000:                       4619            mov     r1, r3
+    1002:                       4b8a            ldr     r3, [pc, #552]  ; (122c <main+0x65a>)
+    1004:                       58e3            ldr     r3, [r4, r3]
+    1006:                       4618            mov     r0, r3
+    1008:                       f7ff ed20       blx     a4c <_ZNSolsEi@plt>
+
+
+std::cout << "\n";
+    100c:                       4b98            ldr     r3, [pc, #608]  ; (1270 <main+0x69e>)
+    100e:                       447b            add     r3, pc
+    1010:                       4619            mov     r1, r3
+    1012:                       4b86            ldr     r3, [pc, #536]  ; (122c <main+0x65a>)
+    1014:                       58e3            ldr     r3, [r4, r3]
+    1016:                       4618            mov     r0, r3
+    1018:                       f7ff ecdc       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+
+
+//exceptions
+
+try { // Block of code to try
+  int age = 15;
+    101c:                       230f            movs    r3, #15
+    101e:                       f8c7 30e0       str.w   r3, [r7, #224]  ; 0xe0
+  if (age >= 18) {
+    1022:                       f8d7 30e0       ldr.w   r3, [r7, #224]  ; 0xe0
+    1026:                       2b11            cmp     r3, #17
+    1028:                   /-- dd08            ble.n   103c <main+0x46a>
+    std::cout << "Access granted - you are old enough.\n";
+    102a:                   |   4b92            ldr     r3, [pc, #584]  ; (1274 <main+0x6a2>)
+    102c:                   |   447b            add     r3, pc
+    102e:                   |   4619            mov     r1, r3
+    1030:                   |   4b7e            ldr     r3, [pc, #504]  ; (122c <main+0x65a>)
+    1032:                   |   58e3            ldr     r3, [r4, r3]
+    1034:                   |   4618            mov     r0, r3
+    1036:                   |   f7ff ecce       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    103a:       /-----------|-- e00d            b.n     1058 <main+0x486>
+  } else {
+    throw 505; // Throw an exception when a problem arise
+    103c:       |           \-> 2004            movs    r0, #4
+    103e:       |               f7ff eca0       blx     980 <__cxa_allocate_exception@plt>
+    1042:       |               4603            mov     r3, r0
+    1044:       |               4618            mov     r0, r3
+    1046:       |               f240 13f9       movw    r3, #505        ; 0x1f9
+    104a:       |               6003            str     r3, [r0, #0]
+    104c:       |               2200            movs    r2, #0
+    104e:       |               4b8a            ldr     r3, [pc, #552]  ; (1278 <main+0x6a6>)
+    1050:       |               58e3            ldr     r3, [r4, r3]
+    1052:       |               4619            mov     r1, r3
+    1054:       |               f7ff ecf4       blx     a40 <__cxa_throw@plt>
+
+//multi-threading in C
+
+pthread_t t1, t2, t3, t4; //Create 4 threads
+
+pthread_create(&t1, NULL, multi_function, NULL); //starting threads
+    1058:       >-------------> f107 0018       add.w   r0, r7, #24
+    105c:       |               2300            movs    r3, #0
+    105e:       |               4a87            ldr     r2, [pc, #540]  ; (127c <main+0x6aa>)
+    1060:       |               447a            add     r2, pc
+    1062:       |               2100            movs    r1, #0
+    1064:       |               f7ff ece6       blx     a34 <pthread_create@plt>
+pthread_create(&t2, NULL, multi_function, NULL);
+    1068:       |               f107 0014       add.w   r0, r7, #20
+    106c:       |               2300            movs    r3, #0
+    106e:       |               4a84            ldr     r2, [pc, #528]  ; (1280 <main+0x6ae>)
+    1070:       |               447a            add     r2, pc
+    1072:       |               2100            movs    r1, #0
+    1074:       |               f7ff ecde       blx     a34 <pthread_create@plt>
+pthread_create(&t3, NULL, multi_function, NULL);
+    1078:       |               f107 0010       add.w   r0, r7, #16
+    107c:       |               2300            movs    r3, #0
+    107e:       |               4a81            ldr     r2, [pc, #516]  ; (1284 <main+0x6b2>)
+    1080:       |               447a            add     r2, pc
+    1082:       |               2100            movs    r1, #0
+    1084:       |               f7ff ecd6       blx     a34 <pthread_create@plt>
+pthread_create(&t4, NULL, multi_function, NULL);
+    1088:       |               f107 000c       add.w   r0, r7, #12
+    108c:       |               2300            movs    r3, #0
+    108e:       |               4a7e            ldr     r2, [pc, #504]  ; (1288 <main+0x6b6>)
+    1090:       |               447a            add     r2, pc
+    1092:       |               2100            movs    r1, #0
+    1094:       |               f7ff ecce       blx     a34 <pthread_create@plt>
+
+pthread_join(t1, NULL); //Closing the threads back to main thread
+    1098:       |               f507 738c       add.w   r3, r7, #280    ; 0x118
+    109c:       |               f5a3 7380       sub.w   r3, r3, #256    ; 0x100
+    10a0:       |               681b            ldr     r3, [r3, #0]
+    10a2:       |               2100            movs    r1, #0
+    10a4:       |               4618            mov     r0, r3
+    10a6:       |               f7ff ec66       blx     974 <pthread_join@plt>
+pthread_join(t2, NULL);
+    10aa:       |               f507 738c       add.w   r3, r7, #280    ; 0x118
+    10ae:       |               f5a3 7382       sub.w   r3, r3, #260    ; 0x104
+    10b2:       |               681b            ldr     r3, [r3, #0]
+    10b4:       |               2100            movs    r1, #0
+    10b6:       |               4618            mov     r0, r3
+    10b8:       |               f7ff ec5c       blx     974 <pthread_join@plt>
+pthread_join(t3, NULL);
+    10bc:       |               f507 738c       add.w   r3, r7, #280    ; 0x118
+    10c0:       |               f5a3 7384       sub.w   r3, r3, #264    ; 0x108
+    10c4:       |               681b            ldr     r3, [r3, #0]
+    10c6:       |               2100            movs    r1, #0
+    10c8:       |               4618            mov     r0, r3
+    10ca:       |               f7ff ec54       blx     974 <pthread_join@plt>
+pthread_join(t4, NULL);
+    10ce:       |               f507 738c       add.w   r3, r7, #280    ; 0x118
+    10d2:       |               f5a3 7386       sub.w   r3, r3, #268    ; 0x10c
+    10d6:       |               681b            ldr     r3, [r3, #0]
+    10d8:       |               2100            movs    r1, #0
+    10da:       |               4618            mov     r0, r3
+    10dc:       |               f7ff ec4a       blx     974 <pthread_join@plt>
+//core1.join(); //Closing the threads back to main thread
+//core2.join();
+//core3.join();
+//core4.join(); //doesnt have to be core, it can be whatever you want to call it
+
+return 0; //important because int main has a integer return type
+    10e0:       |               2500            movs    r5, #0
+std::string food = "Pizza";  // food variable
+    10e2:       |               f107 031c       add.w   r3, r7, #28
+    10e6:       |               4618            mov     r0, r3
+    10e8:       |               f7ff ec62       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
+    10ec:       |               f107 043c       add.w   r4, r7, #60     ; 0x3c
+    10f0:       |               3460            adds    r4, #96 ; 0x60
+    10f2:       |        /----> f107 033c       add.w   r3, r7, #60     ; 0x3c
+    10f6:       |        |      429c            cmp     r4, r3
+    10f8:       |        |  /-- d004            beq.n   1104 <main+0x532>
+    10fa:       |        |  |   3c18            subs    r4, #24
+    10fc:       |        |  |   4620            mov     r0, r4
+    10fe:       |        |  |   f7ff ec58       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    1102:       |        \--|-- e7f6            b.n     10f2 <main+0x520>
+std::string intro = "hello world"; //string
+    1104:       |           \-> f107 039c       add.w   r3, r7, #156    ; 0x9c
+    1108:       |               4618            mov     r0, r3
+    110a:       |               f7ff ec52       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    110e:       |               462b            mov     r3, r5
+    1110:       |  /----------- e074            b.n     11fc <main+0x62a>
+    1112:       |  |            f107 03c4       add.w   r3, r7, #196    ; 0xc4
+    1116:       |  |            4618            mov     r0, r3
+    1118:       |  |            f7ff ec62       blx     9e0 <_ZNSaIcED1Ev@plt>
+    111c:       |  |            f7ff ec66       blx     9ec <__cxa_end_cleanup@plt>
+    1120:       |  |            f107 03c8       add.w   r3, r7, #200    ; 0xc8
+    1124:       |  |            4618            mov     r0, r3
+    1126:       |  |            f7ff ec5c       blx     9e0 <_ZNSaIcED1Ev@plt>
+    112a:       |  |        /-- e010            b.n     114e <main+0x57c>
+    112c:       |  |        |   f107 03cc       add.w   r3, r7, #204    ; 0xcc
+    1130:       |  |        |   4618            mov     r0, r3
+    1132:       |  |        |   f7ff ec56       blx     9e0 <_ZNSaIcED1Ev@plt>
+    1136:       |  |        +-- e00a            b.n     114e <main+0x57c>
+    1138:       |  |        |   f107 03d0       add.w   r3, r7, #208    ; 0xd0
+    113c:       |  |        |   4618            mov     r0, r3
+    113e:       |  |        |   f7ff ec50       blx     9e0 <_ZNSaIcED1Ev@plt>
+    1142:       |  |        +-- e004            b.n     114e <main+0x57c>
+    1144:       |  |        |   f107 03d4       add.w   r3, r7, #212    ; 0xd4
+    1148:       |  |        |   4618            mov     r0, r3
+    114a:       |  |        |   f7ff ec4a       blx     9e0 <_ZNSaIcED1Ev@plt>
+    114e:       |  |        \-> 2e00            cmp     r6, #0
+    1150:       |  |  /-------- d04d            beq.n   11ee <main+0x61c>
+std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
+    1152:       |  |  |         f1c5 0303       rsb     r3, r5, #3
+    1156:       |  |  |         461a            mov     r2, r3
+    1158:       |  |  |         2318            movs    r3, #24
+    115a:       |  |  |         fb02 f303       mul.w   r3, r2, r3
+    115e:       |  |  |         18f4            adds    r4, r6, r3
+    1160:       |  |  |     /-> 42b4            cmp     r4, r6
+    1162:       |  |  +-----|-- d044            beq.n   11ee <main+0x61c>
+    1164:       |  |  |     |   3c18            subs    r4, #24
+    1166:       |  |  |     |   4620            mov     r0, r4
+    1168:       |  |  |     |   f7ff ec22       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    116c:       |  |  |     \-- e7f8            b.n     1160 <main+0x58e>
+    116e:       |  |  |         f107 03d8       add.w   r3, r7, #216    ; 0xd8
+    1172:       |  |  |         4618            mov     r0, r3
+    1174:       |  |  |         f7ff ec34       blx     9e0 <_ZNSaIcED1Ev@plt>
+    1178:       |  |  |  /----- e02d            b.n     11d6 <main+0x604>
+catch (int myNum) { // Block of code to handle errors 
+    117a:       |  |  |  |      4602            mov     r2, r0
+    117c:       |  |  |  |      460b            mov     r3, r1
+    117e:       |  |  |  |      2b01            cmp     r3, #1
+    1180:       |  |  |  |  /-- d123            bne.n   11ca <main+0x5f8>
+    1182:       |  |  |  |  |   4613            mov     r3, r2
+    1184:       |  |  |  |  |   4618            mov     r0, r3
+    1186:       |  |  |  |  |   f7ff ebf0       blx     968 <__cxa_begin_catch@plt>
+    118a:       |  |  |  |  |   4603            mov     r3, r0
+    118c:       |  |  |  |  |   681b            ldr     r3, [r3, #0]
+    118e:       |  |  |  |  |   f8c7 30dc       str.w   r3, [r7, #220]  ; 0xdc
+  std::cout << "Access denied - You must be at least 18 years old.\n";
+    1192:       |  |  |  |  |   4b3e            ldr     r3, [pc, #248]  ; (128c <main+0x6ba>)
+    1194:       |  |  |  |  |   447b            add     r3, pc
+    1196:       |  |  |  |  |   4619            mov     r1, r3
+    1198:       |  |  |  |  |   4b24            ldr     r3, [pc, #144]  ; (122c <main+0x65a>)
+    119a:       |  |  |  |  |   58e3            ldr     r3, [r4, r3]
+    119c:       |  |  |  |  |   4618            mov     r0, r3
+    119e:       |  |  |  |  |   f7ff ec1a       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  std::cout << "Error number: " << myNum;
+    11a2:       |  |  |  |  |   4b3b            ldr     r3, [pc, #236]  ; (1290 <main+0x6be>)
+    11a4:       |  |  |  |  |   447b            add     r3, pc
+    11a6:       |  |  |  |  |   4619            mov     r1, r3
+    11a8:       |  |  |  |  |   4b20            ldr     r3, [pc, #128]  ; (122c <main+0x65a>)
+    11aa:       |  |  |  |  |   58e3            ldr     r3, [r4, r3]
+    11ac:       |  |  |  |  |   4618            mov     r0, r3
+    11ae:       |  |  |  |  |   f7ff ec12       blx     9d4 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+    11b2:       |  |  |  |  |   4603            mov     r3, r0
+    11b4:       |  |  |  |  |   f8d7 10dc       ldr.w   r1, [r7, #220]  ; 0xdc
+    11b8:       |  |  |  |  |   4618            mov     r0, r3
+    11ba:       |  |  |  |  |   f7ff ec48       blx     a4c <_ZNSolsEi@plt>
+catch (int myNum) { // Block of code to handle errors 
+    11be:       |  |  |  |  |   f7ff ec2e       blx     a1c <__cxa_end_catch@plt>
+    11c2:       \--|--|--|--|-- e749            b.n     1058 <main+0x486>
+    11c4:          |  |  |  |   f7ff ec2a       blx     a1c <__cxa_end_catch@plt>
+    11c8:          |  |  |  +-- e7ff            b.n     11ca <main+0x5f8>
+std::string food = "Pizza";  // food variable
+    11ca:          |  |  |  \-> f107 031c       add.w   r3, r7, #28
+    11ce:          |  |  |      4618            mov     r0, r3
+    11d0:          |  |  |      f7ff ebee       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    11d4:          |  |  +----- e7ff            b.n     11d6 <main+0x604>
+std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"}; //array
+    11d6:          |  |  \----> f107 043c       add.w   r4, r7, #60     ; 0x3c
+    11da:          |  |         3460            adds    r4, #96 ; 0x60
+    11dc:          |  |     /-> f107 033c       add.w   r3, r7, #60     ; 0x3c
+    11e0:          |  |     |   429c            cmp     r4, r3
+    11e2:          |  +-----|-- d004            beq.n   11ee <main+0x61c>
+    11e4:          |  |     |   3c18            subs    r4, #24
+    11e6:          |  |     |   4620            mov     r0, r4
+    11e8:          |  |     |   f7ff ebe2       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    11ec:          |  |     \-- e7f6            b.n     11dc <main+0x60a>
+std::string intro = "hello world"; //string
+    11ee:          |  \-------> f107 039c       add.w   r3, r7, #156    ; 0x9c
+    11f2:          |            4618            mov     r0, r3
+    11f4:          |            f7ff ebdc       blx     9b0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt>
+    11f8:          |            f7ff ebf8       blx     9ec <__cxa_end_cleanup@plt>
+    11fc:          \----------> 4618            mov     r0, r3
+    11fe:                       f507 778c       add.w   r7, r7, #280    ; 0x118
+    1202:                       46bd            mov     sp, r7
+    1204:                       e8bd 81f0       ldmia.w sp!, {r4, r5, r6, r7, r8, pc}
+    1208:                       66666666        .word   0x66666666
+    120c:                       40126666        .word   0x40126666
+    1210:                       0001140a        .word   0x0001140a
+    1214:                       000007f6        .word   0x000007f6
+    1218:                       000007d6        .word   0x000007d6
+    121c:                       000007b0        .word   0x000007b0
+    1220:                       00000786        .word   0x00000786
+    1224:                       00000760        .word   0x00000760
+    1228:                       00000708        .word   0x00000708
+    122c:                       0000007c        .word   0x0000007c
+    1230:                       00000704        .word   0x00000704
+    1234:                       000006fe        .word   0x000006fe
+    1238:                       000006e4        .word   0x000006e4
+    123c:                       000006d4        .word   0x000006d4
+    1240:                       000006b2        .word   0x000006b2
+    1244:                       0000008c        .word   0x0000008c
+    1248:                       00000600        .word   0x00000600
+    124c:                       0000060e        .word   0x0000060e
+    1250:                       0000061c        .word   0x0000061c
+    1254:                       0000062a        .word   0x0000062a
+    1258:                       00000638        .word   0x00000638
+    125c:                       0000057c        .word   0x0000057c
+    1260:                       0000054e        .word   0x0000054e
+    1264:                       00000508        .word   0x00000508
+    1268:                       000004e0        .word   0x000004e0
+    126c:                       0000053c        .word   0x0000053c
+    1270:                       0000047e        .word   0x0000047e
+    1274:                       000004f8        .word   0x000004f8
+    1278:                       00000070        .word   0x00000070
+    127c:                       fffffb35        .word   0xfffffb35
+    1280:                       fffffb25        .word   0xfffffb25
+    1284:                       fffffb15        .word   0xfffffb15
+    1288:                       fffffb05        .word   0xfffffb05
+    128c:                       000003b8        .word   0x000003b8
+    1290:                       000003dc        .word   0x000003dc
+
+00001294 <_Z41__static_initialization_and_destruction_0ii>:
+    1294:           b590        push    {r4, r7, lr}
+    1296:           b083        sub     sp, #12
+    1298:           af00        add     r7, sp, #0
+    129a:           6078        str     r0, [r7, #4]
+    129c:           6039        str     r1, [r7, #0]
+    129e:           4c0f        ldr     r4, [pc, #60]   ; (12dc <_Z41__static_initialization_and_destruction_0ii+0x48>)
+    12a0:           447c        add     r4, pc
+    12a2:           687b        ldr     r3, [r7, #4]
+    12a4:           2b01        cmp     r3, #1
+    12a6:       /-- d114        bne.n   12d2 <_Z41__static_initialization_and_destruction_0ii+0x3e>
+    12a8:       |   683b        ldr     r3, [r7, #0]
+    12aa:       |   f64f 72ff   movw    r2, #65535      ; 0xffff
+    12ae:       |   4293        cmp     r3, r2
+    12b0:       +-- d10f        bne.n   12d2 <_Z41__static_initialization_and_destruction_0ii+0x3e>
+  extern wostream wclog;        /// Linked to standard error (buffered)
+#endif
+  //@}
+
+  // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  static ios_base::Init __ioinit;
+    12b2:       |   4b0b        ldr     r3, [pc, #44]   ; (12e0 <_Z41__static_initialization_and_destruction_0ii+0x4c>)
+    12b4:       |   447b        add     r3, pc
+    12b6:       |   4618        mov     r0, r3
+    12b8:       |   f7ff ebaa   blx     a10 <_ZNSt8ios_base4InitC1Ev@plt>
+    12bc:       |   4b09        ldr     r3, [pc, #36]   ; (12e4 <_Z41__static_initialization_and_destruction_0ii+0x50>)
+    12be:       |   447b        add     r3, pc
+    12c0:       |   461a        mov     r2, r3
+    12c2:       |   4b09        ldr     r3, [pc, #36]   ; (12e8 <_Z41__static_initialization_and_destruction_0ii+0x54>)
+    12c4:       |   58e3        ldr     r3, [r4, r3]
+    12c6:       |   4619        mov     r1, r3
+    12c8:       |   4b08        ldr     r3, [pc, #32]   ; (12ec <_Z41__static_initialization_and_destruction_0ii+0x58>)
+    12ca:       |   447b        add     r3, pc
+    12cc:       |   4618        mov     r0, r3
+    12ce:       |   f7ff eb46   blx     95c <__aeabi_atexit@plt>
+    12d2:       \-> bf00        nop
+    12d4:           370c        adds    r7, #12
+    12d6:           46bd        mov     sp, r7
+    12d8:           bd90        pop     {r4, r7, pc}
+    12da:           bf00        nop
+    12dc:           00010d5c    .word   0x00010d5c
+    12e0:           00010df4    .word   0x00010df4
+    12e4:           00010de2    .word   0x00010de2
+    12e8:           0000009c    .word   0x0000009c
+    12ec:           00010dde    .word   0x00010dde
+
+000012f0 <_GLOBAL__sub_I__Z14multi_functionPv>:
+    12f0:       b580            push    {r7, lr}
+    12f2:       af00            add     r7, sp, #0
+    12f4:       f64f 71ff       movw    r1, #65535      ; 0xffff
+    12f8:       2001            movs    r0, #1
+    12fa:       f7ff ffcb       bl      1294 <_Z41__static_initialization_and_destruction_0ii>
+    12fe:       bd80            pop     {r7, pc}
+
+00001300 <_ZN13name_of_class15member_functionEv>:
+static void member_function() { //static member function
+    1300:       b480            push    {r7}
+    1302:       af00            add     r7, sp, #0
+};
+    1304:       bf00            nop
+    1306:       46bd            mov     sp, r7
+    1308:       f85d 7b04       ldr.w   r7, [sp], #4
+    130c:       4770            bx      lr
+
+0000130e <_ZN13name_of_class12my_function2Ev>:
+virtual void my_function2() {
+    130e:       b480            push    {r7}
+    1310:       b083            sub     sp, #12
+    1312:       af00            add     r7, sp, #0
+    1314:       6078            str     r0, [r7, #4]
+};
+    1316:       bf00            nop
+    1318:       370c            adds    r7, #12
+    131a:       46bd            mov     sp, r7
+    131c:       f85d 7b04       ldr.w   r7, [sp], #4
+    1320:       4770            bx      lr
+        ...
+
+00001324 <_ZN13name_of_classC1Ev>:
+class name_of_class {
+    1324:       b480            push    {r7}
+    1326:       b083            sub     sp, #12
+    1328:       af00            add     r7, sp, #0
+    132a:       6078            str     r0, [r7, #4]
+    132c:       4a08            ldr     r2, [pc, #32]   ; (1350 <_ZN13name_of_classC1Ev+0x2c>)
+    132e:       447a            add     r2, pc
+    1330:       4b08            ldr     r3, [pc, #32]   ; (1354 <_ZN13name_of_classC1Ev+0x30>)
+    1332:       58d3            ldr     r3, [r2, r3]
+    1334:       f103 0208       add.w   r2, r3, #8
+    1338:       687b            ldr     r3, [r7, #4]
+    133a:       601a            str     r2, [r3, #0]
+    133c:       687b            ldr     r3, [r7, #4]
+    133e:       220a            movs    r2, #10
+    1340:       609a            str     r2, [r3, #8]
+    1342:       687b            ldr     r3, [r7, #4]
+    1344:       4618            mov     r0, r3
+    1346:       370c            adds    r7, #12
+    1348:       46bd            mov     sp, r7
+    134a:       f85d 7b04       ldr.w   r7, [sp], #4
+    134e:       4770            bx      lr
+    1350:       00010cce        .word   0x00010cce
+    1354:       00000078        .word   0x00000078
+
+00001358 <__libc_csu_init>:
+    1358:              e92d 43f8        stmdb   sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+    135c:              4607             mov     r7, r0
+    135e:              4e0c             ldr     r6, [pc, #48]   ; (1390 <__libc_csu_init+0x38>)
+    1360:              4d0c             ldr     r5, [pc, #48]   ; (1394 <__libc_csu_init+0x3c>)
+    1362:              4688             mov     r8, r1
+    1364:              447e             add     r6, pc
+    1366:              4691             mov     r9, r2
+    1368:              447d             add     r5, pc
+    136a:              f7ff eae8        blx     93c <_init>
+    136e:              1b76             subs    r6, r6, r5
+    1370:              10b6             asrs    r6, r6, #2
+    1372:       /----- d00a             beq.n   138a <__libc_csu_init+0x32>
+    1374:       |      3d04             subs    r5, #4
+    1376:       |      2400             movs    r4, #0
+    1378:       |  /-> f855 3f04        ldr.w   r3, [r5, #4]!
+    137c:       |  |   464a             mov     r2, r9
+    137e:       |  |   4641             mov     r1, r8
+    1380:       |  |   4638             mov     r0, r7
+    1382:       |  |   3401             adds    r4, #1
+    1384:       |  |   4798             blx     r3
+    1386:       |  |   42a6             cmp     r6, r4
+    1388:       |  \-- d1f6             bne.n   1378 <__libc_csu_init+0x20>
+    138a:       \----> e8bd 83f8        ldmia.w sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+    138e:              bf00             nop
+    1390:              00010b80         .word   0x00010b80
+    1394:              00010b74         .word   0x00010b74
+
+00001398 <__libc_csu_fini>:
+    1398:       4770            bx      lr
+    139a:       bf00            nop
+
+Disassembly of section .fini:
+
+0000139c <_fini>:
+    139c:       e92d4008        push    {r3, lr}
+    13a0:       e8bd8008        pop     {r3, pc}
